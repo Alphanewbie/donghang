@@ -60,7 +60,8 @@
 label {
   position: absolute;
   top: 36.6666666667px;
-  color: rgba(255, 255, 255, 0.5);
+  color : gray;
+  /* color: rgba(255, 255, 255, 0.5); */
   font: 400 36.6666666667px Roboto;
   cursor: text;
   transition: .25s ease;
@@ -127,14 +128,14 @@ input:-webkit-autofill {
 </head>
 <body>
 
-
+<!-- 
 <div class="centered">
   <div class="group">
     <input id="name" type="text" required="required"/>
-    <label for="name">Name</label>
+    <label for="name">업소명을 입력해주세요.</label>
     <div class="bar"></div>
   </div>
-</div>
+</div> -->
 
 
   <div class="main-section">
@@ -175,7 +176,7 @@ input:-webkit-autofill {
   			<div class="centered">
   <div class="group">
     <input id="name" type="text" required="required"/>
-    <label for="name">Name</label>
+    <label for="name">업소명을 입력해주세요.</label>
     <div class="bar"></div>
   </div>
 </div>
