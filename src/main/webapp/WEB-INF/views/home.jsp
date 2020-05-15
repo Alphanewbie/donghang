@@ -244,7 +244,7 @@ input:-webkit-autofill {
 					</script>
 					메인 페이지 제작중입니다. 세세한것 바꾸기 어렵네유
 					<!-- <i class="icon-heart" aria-hidden="true"></i> -->
-					by <a href="https://colorlib.com" target="_blank">성 연</a>
+					by <a href="https://github.com/Sohottoday" target="_blank">성 연</a>
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 				</p>
 			</div>

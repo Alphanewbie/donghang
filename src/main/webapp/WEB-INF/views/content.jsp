@@ -59,8 +59,16 @@
 	type="text/css">
 <style>
 
+.container111 {
+	padding : 100px;
+}
 
-
+.span45 {
+	color : white;
+}
+.upso_name {
+	color : white;
+}
 </style>
 
 </head>
@@ -113,6 +121,36 @@
 		</nav>
 		<!-- END nav -->
 
+		<section class="hero-wrap js-fullheight">
+		
+		<!-- map and content -->
+			<div class="container111">
+	<div class="row-fluid">
+        <div class="span8">
+        	<!-- <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=15+Springfield+Way,+Hythe,+CT21+5SH&aq=t&sll=52.8382,-2.327815&sspn=8.047465,13.666992&ie=UTF8&hq=&hnear=15+Springfield+Way,+Hythe+CT21+5SH,+United+Kingdom&t=m&z=14&ll=51.077429,1.121722&output=embed"></iframe> -->
+         	<iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+         	src="https://maps.google.co.kr/maps?f=q&source=s_q&hl=ko&geocode=&q=서울특별시 강남구 대치동 989번지 2호&
+         	aq=t&sll=37.5025867,127.0401361&sspn=37.5025867,127.0401361&ie=UTF8&hq=&
+         	hnear=서울특별시 강남구 대치동 989번지 2호&t=m&z=14&ll=37.4987948,127.0595904&output=embed"></iframe>
+    	</div>
+    	<!-- sspn뭔지 모르겠음 / q => 마킹 주소 / hnear 뭔지 모르겠음 / ll => 지도 센터 / sll 뭔지 모르겠음 -->
+    	
+      	<div class="span45">
+    		<h2 class="upso_name">민물장어 참숯불소금구이</h2>
+    		<address>
+    			<strong>서울특별시 강남구 대치동  989번지 2호  </strong><br>
+    			허가번호 : 3220000-101-1997-04579<br>
+    			업태명 : 정종/대포집/소주방<br>
+    			업종명 : 일반음식점<br>
+    			행정처분내역 : <br>
+    			폐업사유 : 자진폐업(건강)<br>
+    			폐업일자 : 20150408<br>
+    			<abbr title="Phone">P:</abbr> 02 5526058
+    		</address>
+    	</div>
+    </div>
+</div>
+		</section>
 
 
 
@@ -127,7 +165,7 @@
 					</script>
 					메인 페이지 제작중입니다. 세세한것 바꾸기 어렵네유
 					<!-- <i class="icon-heart" aria-hidden="true"></i> -->
-					by <a href="https://colorlib.com" target="_blank">성 연</a>
+					by <a href="https://github.com/Sohottoday" target="_blank">성 연</a>
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 				</p>
 			</div>
