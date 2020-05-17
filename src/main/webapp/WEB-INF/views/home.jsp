@@ -213,8 +213,8 @@ input:-webkit-autofill {
 					<div class="centered">
 						<div class="group">
 						<form action="search" method="GET">
-							<input id="name" name="keyword" type="text" required="required" /> <label
-								for="name">업소명을 입력해주세요.</label>
+							<input id="name" name="keyword" type="text" required="required" onchange="simularsearch(this.value)"/> 
+							<label for="name">업소명을 입력해주세요.</label>
 							<div class="bar"></div>
 							</form>
 						</div>
@@ -262,9 +262,25 @@ input:-webkit-autofill {
 	</div>
 
 
+	<script> 
+	function simularsearch(value) {
+		var req = new XMLHttpRequest();
+		//var result = document.getElementById("result");
+		req.onreadystatechange = function() {		
+			//alert("req.readyState : "+req.readyState);		
+			if(req.status == 200 && req.readyState == 4)
+				// 200이면 요청이 성공적으로 왔을 때, 4는 요청이 전부 왔을때
+				//result.innerHTML += req.responseText;
+				console.log(req.responseText)
+		}	
+		req.open("GET", "simularsearch?keyword="+value, true);
+		// 요청을 어떤 형식으로 받을 것인지
+		req.send();	
+		// 요청을 보낸다
+	}	
+	</script>
 	<script src="<c:url value="/resources/js/jquery.min.js" />"></script>
-	<script
-		src="<c:url value="/resources/js/jquery-migrate-3.0.1.min.js" />"></script>
+	<script src="<c:url value="/resources/js/jquery-migrate-3.0.1.min.js" />"></script>
 	<script src="<c:url value="/resources/js/popper.min.js" />"></script>
 	<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 	<script src="<c:url value="/resources/js/jquery.easing.1.3.js" />"></script>
