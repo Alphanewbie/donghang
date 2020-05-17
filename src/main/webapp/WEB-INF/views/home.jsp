@@ -263,7 +263,7 @@ input:-webkit-autofill {
 
 
 	<script> 
-	function simularsearch(value) {
+	/*function simularsearch(value) {
 		var req = new XMLHttpRequest();
 		//var result = document.getElementById("result");
 		req.onreadystatechange = function() {		
@@ -277,7 +277,42 @@ input:-webkit-autofill {
 		// 요청을 어떤 형식으로 받을 것인지
 		req.send();	
 		// 요청을 보낸다
-	}	
+	}*/
+	$(function(){
+		$( "#name" ).autocomplete({
+			source : function( request, response ) {
+		        $.ajax({
+		            url: "simularsearch?keyword="+value,
+		            dataType: "json",
+		            // parameter 값이다. 여러개를 줄수도 있다.
+		            data: {
+		              //request.term >> 이거 자체가 text박스내에 입력된 값이다.
+		              searchValue: request.term
+		            },
+		            success: function( result ) {
+		            	//return 된놈을 response() 함수내에 다음과 같이 정의해서 뽑아온다.
+		                response( 
+		                	$.map( result, function( item ) {
+		                			return {
+		                			//label : 화면에 보여지는 텍스트
+		                			//value : 실제 text태그에 들어갈 값
+		                			//본인은 둘다 똑같이 줬음
+		                			//화면에 보여지는 text가 즉, value가 되기때문 
+		                  				label: item.data,
+		                  				value: item.data
+		                			}
+		              		})
+		              	);
+		            }
+		          });
+		    },
+ 		        //최소 몇자 이상되면 통신을 시작하겠다라는 옵션
+			minLength: 2,
+			//자동완성 목록에서 특정 값 선택시 처리하는 동작 구현
+			//구현없으면 단순 text태그내에 값이 들어간다.
+			select: function( event, ui ) {}
+		});
+	})
 	</script>
 	<script src="<c:url value="/resources/js/jquery.min.js" />"></script>
 	<script src="<c:url value="/resources/js/jquery-migrate-3.0.1.min.js" />"></script>
