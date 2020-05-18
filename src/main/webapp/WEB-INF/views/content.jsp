@@ -69,6 +69,85 @@
 .upso_name {
 	color : white;
 }
+
+/* 테이블 환경 */
+/* body {
+  background: #EEE; */
+  /* font-size:0.9em !important; */
+/* } */
+
+.invoice {
+  width: 970px !important;
+  margin: 50px auto;
+}
+.invoice .invoice-header {
+  padding: 25px 25px 15px;
+}
+.invoice .invoice-header h1 {
+  margin: 0;
+}
+.invoice .invoice-header .media .media-body {
+  font-size: .9em;
+  margin: 0;
+}
+.invoice .invoice-body {
+  border-radius: 10px;
+  padding: 25px;
+  background: #FFF;
+}
+.invoice .invoice-footer {
+  padding: 15px;
+  font-size: 0.9em;
+  text-align: center;
+  color: #999;
+}
+
+.logo {
+  max-height: 70px;
+  border-radius: 10px;
+}
+
+.dl-horizontal {
+  margin: 0;
+}
+ .dl-horizontal dt {
+  float: left;
+  width: 80px;
+  overflow: hidden;
+  clear: left;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color : white;
+}
+.dl-horizontal dd {
+  margin-left: 90px;
+  color : white;
+} 
+td {
+	color : white;
+	border: 1px solid white;
+}
+
+.rowamount {
+  padding-top: 15px !important;
+}
+
+.rowtotal {
+  font-size: 1.3em;
+}
+
+.colfix {
+  width: 12%;
+}
+
+.mono {
+  font-family: monospace;
+}
+.panel-title {
+	color : white;
+}
+
 </style>
 
 </head>
@@ -137,7 +216,7 @@
     	
       	<div class="span45">
     		<h2 class="upso_name">민물장어 참숯불소금구이</h2>
-    		<address>
+<!--     		<address>
     			<strong>서울특별시 강남구 대치동  989번지 2호  </strong><br>
     			허가번호 : 3220000-101-1997-04579<br>
     			업태명 : 정종/대포집/소주방<br>
@@ -146,8 +225,141 @@
     			폐업사유 : 자진폐업(건강)<br>
     			폐업일자 : 20150408<br>
     			<abbr title="Phone">P:</abbr> 02 5526058
-    		</address>
-    	</div>
+    		</address> -->
+    		
+    		
+    		<!-- 테이블내용 -->
+<!--          <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">&nbsp;업소 정보</h3>
+          </div>
+          <div class="panel-body">
+            <dl class="dl-horizontal">
+              <dt>주 소</dt>
+              <dd><strong>서울특별시 강남구 대치동 989번지 2호</strong></dd>
+              <dt>허가번호</dt>
+              <dd>3220000-101-1997-04579</dd>
+              <dt>업태명</dt>
+              <dd>정종/대포집/소주방</dd>
+              <dt>업종명</dt>
+              <dd>일반음식점</dd>
+              <dt>법인명</dt>
+              <dd>&nbsp;</dd>
+              <dt>전화번호</dt>
+              <dd class="mono">02 9985671</dd>
+              <dt>영업장 면접</dt>
+              <dd>20.64㎡</dd>
+              <dt>&nbsp;</dt>
+              <dd>&nbsp;</dd>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-7">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">행정처분 내역</h3>
+          </div>
+          <div class="panel-body">
+            <dl class="dl-horizontal">
+              <dt>처분명</dt>
+              <dd>영업정지</dd>
+              <dt>법적근거</dt>
+              <dd>식품위생법 제25조</dd>
+              <dt>위반일자</dt>
+              <dd>20080522</dd>
+              <dt>위반내용</dt>
+              <dd>법 제44조(영업자 등의 준수사항) 위반>식품접객업자의 준수사항(별표 17 제6호자목ㆍ파목ㆍ머목 및 별도의 개별 처분기준이 있는 경우는 제외한다)의 위반으로서 별표 17 제6호타목1)을 위반함
+              </dd>
+              <dt>처분내용</dt>
+              <dd>영업정지</dd>
+              <dt>폐업일자</dt>
+              <dd class="mono">20090212</dd>
+              <dt>폐업구분</dt>
+              <dd>자진폐업</dd>
+              <dt>폐업사유</dt>
+              <dd>행정처분</dd>
+              <dt>&nbsp;</dt>
+              <dd>&nbsp;</dd>
+          </div>
+        </div>
+      </div>
+    </div>
+    		 -->
+    		         <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">&nbsp;업소 정보</h3>
+          </div>
+          <table class="panel-body">
+            <dl class="dl-horizontal">
+          
+            <tr>
+              <td>주 소</td>
+              <td><strong>서울특별시 강남구 대치동 989번지 2호</strong></td>
+            </tr>
+            <tr>
+              <td>허가번호</td>
+              <td>3220000-101-1997-04579</td>
+            </tr>
+            <tr>
+              <td>업태명</td>
+              <td>정종/대포집/소주방</td>
+             </tr>
+             <tr>
+              <td>업종명</td>
+              <td>일반음식점</td>
+             </tr>
+             <tr>
+              <td>법인명</td>
+              <td>&nbsp;</td>
+             </tr>
+             <tr>
+              <td>전화번호</td>
+              <td class="mono">02 9985671</td>
+             </tr>
+             <tr>
+              <td>영업장 면접</td>
+              <td>20.64㎡</td>
+             </tr>
+              <!-- <dt>&nbsp;</dt>
+              <dd>&nbsp;</dd> -->
+              
+          </table>
+          <br>
+          <br>
+        </div>
+      </div>
+      <div class="col-xs-7">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">행정처분 내역</h3>
+          </div>
+          <div class="panel-body">
+            <dl class="dl-horizontal">
+              <dt>처분명</dt>
+              <dd>영업정지</dd>
+              <dt>법적근거</dt>
+              <dd>식품위생법 제25조</dd>
+              <dt>위반일자</dt>
+              <dd>20080522</dd>
+              <dt>위반내용</dt>
+              <dd>법 제44조(영업자 등의 준수사항) 위반>식품접객업자의 준수사항(별표 17 제6호자목ㆍ파목ㆍ머목 및 별도의 개별 처분기준이 있는 경우는 제외한다)의 위반으로서 별표 17 제6호타목1)을 위반함
+              </dd>
+              <dt>처분내용</dt>
+              <dd>영업정지</dd>
+              <dt>폐업일자</dt>
+              <dd class="mono">20090212</dd>
+              <dt>폐업구분</dt>
+              <dd>자진폐업</dd>
+              <dt>폐업사유</dt>
+              <dd>행정처분</dd>
+              <dt>&nbsp;</dt>
+              <dd>&nbsp;</dd>
+          </div>
+        </div>
+      </div>
+    </div>
+    		
+    	
     </div>
 </div>
 		</section>
@@ -203,7 +415,10 @@
 		src="<c:url value="/resources/js/bootstrap-datetimepicker.min.js" />"></script>
 	<script src="<c:url value="/resources/js/main.js" />"></script>
 
+	<!-- 테이블환경 -->
+	<script>
 
+	</script>
 
 
 
