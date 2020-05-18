@@ -5,30 +5,31 @@ public class BusinessVO {
     private int cgg_code;
     private int snt_cob_code;
     private int yy;
-    private int upso_sno;
+    private String upso_sno;
     private String snt_cob_nm;
-    private String perm_nt_ymd;
+    private int perm_nt_ymd;
     private String upso_nm ;
-    private String site_addr_rd;
     private String site_addr;
     private String upso_site_telno;
+    private int bman_stdt;
     private String bup_nm;
-    private String site_stdt;
+    private int site_stdt;
     private String admdng_nm;
-    private String dcb_ymd ;
+    private int dcb_ymd ;
     private String dcb_gbn_nm;
     private String dcb_why ;
     private String snt_uptae_nm;
     private String ge_eh_yn ;
     private String site_loc_gbn ;
-    private int trdp_area_etc ;
+    private float trdp_area_etc ;
     private String perm_nt_no ;
-    private String cn_perm_stdt ;
-    private String cn_perm_enddt;
+    private int cn_perm_stdt ;
+    private int cn_perm_enddt;
     private String cn_perm_nt_sayu ;
     private String pern_nt_cn ;
-    
-    
+    private String perm_nt_cn;
+    private int geoLat;
+    private int geoLon; 
     
 	public int getCgg_code() {
 		return cgg_code;
@@ -48,10 +49,10 @@ public class BusinessVO {
 	public void setYy(int yy) {
 		this.yy = yy;
 	}
-	public int getUpso_sno() {
+	public String getUpso_sno() {
 		return upso_sno;
 	}
-	public void setUpso_sno(int upso_sno) {
+	public void setUpso_sno(String upso_sno) {
 		this.upso_sno = upso_sno;
 	}
 	public String getSnt_cob_nm() {
@@ -60,10 +61,10 @@ public class BusinessVO {
 	public void setSnt_cob_nm(String snt_cob_nm) {
 		this.snt_cob_nm = snt_cob_nm;
 	}
-	public String getPerm_nt_ymd() {
+	public int getPerm_nt_ymd() {
 		return perm_nt_ymd;
 	}
-	public void setPerm_nt_ymd(String perm_nt_ymd) {
+	public void setPerm_nt_ymd(int perm_nt_ymd) {
 		this.perm_nt_ymd = perm_nt_ymd;
 	}
 	public String getUpso_nm() {
@@ -71,12 +72,6 @@ public class BusinessVO {
 	}
 	public void setUpso_nm(String upso_nm) {
 		this.upso_nm = upso_nm;
-	}
-	public String getSite_addr_rd() {
-		return site_addr_rd;
-	}
-	public void setSite_addr_rd(String site_addr_rd) {
-		this.site_addr_rd = site_addr_rd;
 	}
 	public String getSite_addr() {
 		return site_addr;
@@ -90,16 +85,22 @@ public class BusinessVO {
 	public void setUpso_site_telno(String upso_site_telno) {
 		this.upso_site_telno = upso_site_telno;
 	}
+	public int getBman_stdt() {
+		return bman_stdt;
+	}
+	public void setBman_stdt(int bman_stdt) {
+		this.bman_stdt = bman_stdt;
+	}
 	public String getBup_nm() {
 		return bup_nm;
 	}
 	public void setBup_nm(String bup_nm) {
 		this.bup_nm = bup_nm;
 	}
-	public String getSite_stdt() {
+	public int getSite_stdt() {
 		return site_stdt;
 	}
-	public void setSite_stdt(String site_stdt) {
+	public void setSite_stdt(int site_stdt) {
 		this.site_stdt = site_stdt;
 	}
 	public String getAdmdng_nm() {
@@ -108,10 +109,10 @@ public class BusinessVO {
 	public void setAdmdng_nm(String admdng_nm) {
 		this.admdng_nm = admdng_nm;
 	}
-	public String getDcb_ymd() {
+	public int getDcb_ymd() {
 		return dcb_ymd;
 	}
-	public void setDcb_ymd(String dcb_ymd) {
+	public void setDcb_ymd(int dcb_ymd) {
 		this.dcb_ymd = dcb_ymd;
 	}
 	public String getDcb_gbn_nm() {
@@ -144,10 +145,10 @@ public class BusinessVO {
 	public void setSite_loc_gbn(String site_loc_gbn) {
 		this.site_loc_gbn = site_loc_gbn;
 	}
-	public int getTrdp_area_etc() {
+	public float getTrdp_area_etc() {
 		return trdp_area_etc;
 	}
-	public void setTrdp_area_etc(int trdp_area_etc) {
+	public void setTrdp_area_etc(float trdp_area_etc) {
 		this.trdp_area_etc = trdp_area_etc;
 	}
 	public String getPerm_nt_no() {
@@ -156,16 +157,16 @@ public class BusinessVO {
 	public void setPerm_nt_no(String perm_nt_no) {
 		this.perm_nt_no = perm_nt_no;
 	}
-	public String getCn_perm_stdt() {
+	public int getCn_perm_stdt() {
 		return cn_perm_stdt;
 	}
-	public void setCn_perm_stdt(String cn_perm_stdt) {
+	public void setCn_perm_stdt(int cn_perm_stdt) {
 		this.cn_perm_stdt = cn_perm_stdt;
 	}
-	public String getCn_perm_enddt() {
+	public int getCn_perm_enddt() {
 		return cn_perm_enddt;
 	}
-	public void setCn_perm_enddt(String cn_perm_enddt) {
+	public void setCn_perm_enddt(int cn_perm_enddt) {
 		this.cn_perm_enddt = cn_perm_enddt;
 	}
 	public String getCn_perm_nt_sayu() {
@@ -180,8 +181,23 @@ public class BusinessVO {
 	public void setPern_nt_cn(String pern_nt_cn) {
 		this.pern_nt_cn = pern_nt_cn;
 	}
+	public String getPerm_nt_cn() {
+		return perm_nt_cn;
+	}
+	public void setPerm_nt_cn(String perm_nt_cn) {
+		this.perm_nt_cn = perm_nt_cn;
+	}
+	public int getGeoLat() {
+		return geoLat;
+	}
+	public void setGeoLat(int geoLat) {
+		this.geoLat = geoLat;
+	}
+	public int getGeoLon() {
+		return geoLon;
+	}
+	public void setGeoLon(int geoLon) {
+		this.geoLon = geoLon;
+	}
     
-
-
-
 }
