@@ -57,6 +57,8 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/style.css"
 	type="text/css">
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <style>
 * {
 	box-sizing: border-box;
@@ -212,10 +214,11 @@ input:-webkit-autofill {
 
 					<div class="centered">
 						<div class="group">
-						<form action="search" method="GET">
-							<input id="name" name="keyword" type="text" required="required" onchange="simularsearch(this.value)"/> 
-							<label for="name">업소명을 입력해주세요.</label>
-							<div class="bar"></div>
+							<form action="search" method="GET">
+								<input id="name" name="keyword" type="text" required="required"
+									/> <label for="name">업소명을
+									입력해주세요.</label>
+								<div class="bar"></div>
 							</form>
 						</div>
 					</div>
@@ -261,26 +264,10 @@ input:-webkit-autofill {
 				stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg>
 	</div>
 
-
-	<script> 
-	function simularsearch(value) {
-		var req = new XMLHttpRequest();
-		//var result = document.getElementById("result");
-		req.onreadystatechange = function() {		
-			//alert("req.readyState : "+req.readyState);		
-			if(req.status == 200 && req.readyState == 4)
-				// 200이면 요청이 성공적으로 왔을 때, 4는 요청이 전부 왔을때
-				//result.innerHTML += req.responseText;
-				console.log(req.responseText)
-		}	
-		req.open("GET", "simularsearch?keyword="+value, true);
-		// 요청을 어떤 형식으로 받을 것인지
-		req.send();	
-		// 요청을 보낸다
-	}	
-	</script>
+	
 	<script src="<c:url value="/resources/js/jquery.min.js" />"></script>
-	<script src="<c:url value="/resources/js/jquery-migrate-3.0.1.min.js" />"></script>
+	<script
+		src="<c:url value="/resources/js/jquery-migrate-3.0.1.min.js" />"></script>
 	<script src="<c:url value="/resources/js/popper.min.js" />"></script>
 	<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 	<script src="<c:url value="/resources/js/jquery.easing.1.3.js" />"></script>
@@ -298,8 +285,75 @@ input:-webkit-autofill {
 		src="<c:url value="/resources/js/bootstrap-datetimepicker.min.js" />"></script>
 	<script src="<c:url value="/resources/js/main.js" />"></script>
 
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	
+	<script>
+		function simularsearch(value) {
+			var req = new XMLHttpRequest();
+			//var result = document.getElementById("result");
+			req.onreadystatechange = function() {
+				//alert("req.readyState : "+req.readyState);		
+				if (req.status == 200 && req.readyState == 4)
+					// 200이면 요청이 성공적으로 왔을 때, 4는 요청이 전부 왔을때
+					//result.innerHTML += req.responseText;
+					console.log(req.responseText)
+			}
+			req.open("GET", "simularsearch?keyword=" + value, true);
+			// 요청을 어떤 형식으로 받을 것인지
+			req.send();
+			// 요청을 보낸다
+		}
 
+		$(function() { //화면 다 뜨면 시작
+			$("#name").autocomplete({
+				source : function(request, response) {
+					var value = $('#name').val()
+					$.ajax({
+						type : 'get',
+						url : "simularsearch?keyword=" + value,
+						dataType : "json",
+						//data: {"param":"param"},
+						success : function(data) {
+							//서버에서 json 데이터 response 후 목록에 추가
+							response($.map(data, function(item) { //json[i] 번째 에 있는게 item 임.
+								console.log(item)
+								return {
+									label: item, 
+									value: item
+								}
+							}));
+						}
+					});
+				}, // source 는 자동 완성 대상
+				select : function(event, ui) { //아이템 선택시
+					console.log(ui);//사용자가 오토컴플릿이 만들어준 목록에서 선택을 하면 반환되는 객체
+					console.log(ui.item.label); //김치 볶음밥label
+					console.log(ui.item.value); //김치 볶음밥
+					console.log(ui.item.test); //김치 볶음밥test
 
+				},
+				focus : function(event, ui) { //포커스 가면
+					return false;//한글 에러 잡기용도로 사용됨
+				},
+				minLength : 2,// 최소 글자수
+				autoFocus : true, //첫번째 항목 자동 포커스 기본값 false
+				classes : { //잘 모르겠음
+					"ui-autocomplete" : "highlight"
+				},
+				delay : 500, //검색창에 글자 써지고 나서 autocomplete 창 뜰 때 까지 딜레이 시간(ms)
+				//	            disabled: true, //자동완성 기능 끄기
+				position : {
+					my : "right top",
+					at : "right bottom"
+				}, //잘 모르겠음
+				close : function(event) { //자동완성창 닫아질때 호출
+					console.log(event);
+				}
+			});
+
+		});
+	</script>
 
 
 

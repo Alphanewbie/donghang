@@ -1,6 +1,7 @@
 package info.donghang.donghang;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import Dao.upsoDAO;
+import Vo.BusinessVO;
 import Vo.SearchVO;
 
 
@@ -24,28 +26,38 @@ public class SearchContoller {
 	
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public String home(String keyword) {
-		
-		String[] search = keyword.split(" ",2);
-	
-		System.out.println(search.length);
+		List<BusinessVO> list = null;
+		String[] search = keyword.split("/",2);
+//		System.out.println(search[0] +"/here/"+ search[1]);
+//		System.out.println(search.length);
 		if(search.length ==2) {
-			SearchVO test = new SearchVO(search[0],search[1]);
+			SearchVO test = new SearchVO(search[0].trim(),search[1].trim());
+			list = dao.upsoSearch(test);
 		}
 		else {
 //			키워드 1개짜리 검색
+			list = dao.upsoSearch(keyword);
 		}
-
+		if(list==null)
+			return "home";
+		for(int i=0;i<list.size();i++) {
+			System.out.println(list.get(i).getUpso_nm());
+		}
 //		upsoSearch(test);
 		
 		return "home";
 	}
 	
-	
 	@RequestMapping(value = "/simularsearch", method = RequestMethod.GET)
-	public @ResponseBody List<SearchVO> simularsearch(String keyword) {
+	public @ResponseBody List<String> simularsearch(String keyword) {
 		List<SearchVO> list = dao.upsoSimular(keyword);
-		System.out.println(list.get(0).toString());
-		return list;
+		List<String> result = new ArrayList<>();
+		for(int i=0;i<list.size();i++) {
+			SearchVO item = list.get(i);
+			result.add(item.getUpso_nm()+" / "+item.getSite_addr());
+//			System.out.println(item.getUpso_nm()+" / "+item.getSite_addr());
+		}
+		return result;
 	}
 	
 }
