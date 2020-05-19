@@ -169,7 +169,7 @@ td {
 			class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
 			id="ftco-navbar">
 			<div class="container">
-				<a class="navbar-brand" href="localhost:8000/java">DongHang</a>
+				<a class="navbar-brand" href="http://localhost:8000/donghang">DongHang</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
 					data-target="#ftco-nav" aria-controls="ftco-nav"
 					aria-expanded="false" aria-label="Toggle navigation">
@@ -183,8 +183,8 @@ td {
 								<b class="caret"></b>
 						</a>
 							<div class="dropdown-menu dropdown-menu-left">
-								<a href="#" class="dropdown-item"><i
-									class="ion-ios-apps mr-2"></i> 기본 분석 </a> <a href="#"
+								<a href="http://localhost:8000/donghang/analysis" class="dropdown-item"><i
+									class="ion-ios-apps mr-2"></i> 기본 분석 </a> <a href="http://localhost:8000/donghang/data"
 									class="dropdown-item"><i class="ion-ios-document mr-2"></i>
 									데이터 분석 </a>
 							</div></li>
@@ -209,7 +209,7 @@ td {
         	<!-- <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=15+Springfield+Way,+Hythe,+CT21+5SH&aq=t&sll=52.8382,-2.327815&sspn=8.047465,13.666992&ie=UTF8&hq=&hnear=15+Springfield+Way,+Hythe+CT21+5SH,+United+Kingdom&t=m&z=14&ll=51.077429,1.121722&output=embed"></iframe> -->
          	<iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
          	src="https://maps.google.co.kr/maps?f=q&source=s_q&hl=ko&geocode=&q=서울특별시 강남구 대치동 989번지 2호&
-         	aq=t&sll=37.5025867,127.0401361&sspn=37.5025867,127.0401361&ie=UTF8&hq=&
+         	aq=t&sll=37.4987948,127.0595904&sspn=37.4987948,127.0595904&ie=UTF8&hq=&
          	hnear=서울특별시 강남구 대치동 989번지 2호&t=m&z=14&ll=37.4987948,127.0595904&output=embed"></iframe>
     	</div>
     	<!-- sspn뭔지 모르겠음 / q => 마킹 주소 / hnear 뭔지 모르겠음 / ll => 지도 센터 / sll 뭔지 모르겠음 -->

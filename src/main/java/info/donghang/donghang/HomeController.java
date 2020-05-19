@@ -28,4 +28,31 @@ public class HomeController {
 		return "content";
 	}
 	
+	@RequestMapping(value = "/analysis", method = RequestMethod.GET)
+	public String analysis(Locale locale, Model model) {
+				
+				
+		return "ana1";
+	}
+	
+	@RequestMapping(value = "/data", method = RequestMethod.GET)
+	public String dataAnal(Locale locale, Model model) {
+				
+				
+		return "data";
+	}
+	
+	@RequestMapping(value = "/data2", method = RequestMethod.GET)
+	public String dataAnal2(Locale locale, Model model) {
+				
+				
+		return "data2";
+	}
+	@RequestMapping(value = "/content2", method = RequestMethod.GET)
+	public String content2(Locale locale, Model model) {
+				
+				
+		return "content2";
+	}
+	
 }
