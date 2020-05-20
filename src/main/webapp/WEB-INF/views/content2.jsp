@@ -107,7 +107,7 @@
   display: grid;
   padding: 30px 20px 25px;
   grid-template-areas: "title expenses picture" "days expenses picture" "days expenses picture" "days goals quote" "notes tracker tracker";
-  grid-template-columns: 50% 30% 20%;
+  grid-template-columns: 50% 50% ;
   grid-template-rows: 18% auto auto 30% 25%;
 }
 .notebook__inner:after {
@@ -128,12 +128,12 @@
   height : 200px;
 }
 .title h1 {
-  font: 50px/1 "Lobster", cursive;
+  font: 30px/1 "Lobster", cursive;
   text-shadow: 2px 1px 0 black, 5px 4px 0 #3399ff;
   margin: 0;
 }
 .title h3 {
-  font: 13px/1.2 "Rock Salt", cursive;
+  font: 20px/1.2 "Rock Salt", cursive;
   margin: 8px;
 }
 
@@ -274,12 +274,16 @@
   padding: 7px 7px 5px;
 }
 .expenses__title {
+	text-align : center;
+	color : black;
   font: 4px;
 }
 .expenses__amount {
+text-align : center;
+	color : black;
   font: 19px 'Gochi Hand', cursive;
   display: inline-block;
-  margin-left: 10px;
+ /*  margin-left: 10px; */
 }
 .expenses .savings {
   position: relative;
@@ -350,7 +354,7 @@
 }
 
 .music {
-  grid-area: quote;
+  grid-area: tracker;
   margin: 25px 0 10px 20px;
   position: relative;
 }
@@ -517,84 +521,83 @@
   <div class="notebook">
     <div class="notebook__inner">
       <div class="title"> 
-        <h1>Week 18</h1>
-        <h3>April 29 - May 6</h3>
+        <h1>차랑골숯불구이</h1>
+        <h3>서울특별시 도봉구 창동  552번지 1호  </h3>
       </div>
       <div class="days">
         <div class="days__item">
-          <div class="days__day">Monday</div>
+          <div class="days__day">허가번호</div>
           <div class="days__list">
-            <p>Prepare gift</p>
-            <p>Travel Day!</p>
-            <p>Check ads</p>
-            <p>Ad copy change</p>
+            <p>3090000</p>
+            <p>112</p>
+            <p>1996</p>
+            <p>00120</p>
           </div>
         </div>
         <div class="days__item">
-          <div class="days__day">Tuesday</div>
+          <div class="days__day">전화번호</div>
           <div class="days__list">
-            <p>SEO LP</p>
-            <p>New ad creatives</p>
+            <p>  02 9985640  </p>
+            
             <div class="highlighted"> 
-              <div class="text"> <span>7pm: Waitress</span></div>
+              <div class="text"> <span></span></div>
             </div>
           </div>
         </div>
         <div class="days__item">
-          <div class="days__day">Wednesday</div>
+          <div class="days__day">법인명</div>
           <div class="days__list">
-            <p>SEO LP</p>
-            <p>Weekly Meet</p>
+            <p></p>
+            
             <div class="highlighted"> 
-              <div class="text"> <span>2pm: Anastasia</span></div>
+              <div class="text"> <span></span></div>
             </div>
           </div>
         </div>
         <div class="days__item">
-          <div class="days__day">Thursday</div>
+          <div class="days__day">업종명</div>
           <div class="days__list">
-            <p>SEO LP</p>
+            <p>식품자동판매기영업</p>
             <div class="highlighted"> 
-              <div class="text"> <span>2pm: Come From Away</span></div>
-              <div class="text"> <span>7pm: The Band's Visit</span></div>
+              <div class="text"> <span></span></div>
+              <div class="text"> <span></span></div>
             </div>
           </div>
         </div>
         <div class="days__item">
-          <div class="days__day">Friday</div>
+          <div class="days__day">허가신고일</div>
           <div class="days__list">
-            <p>Notion docs</p>
-            <p>Ad report</p>
+            <p>19960604</p>
+            
             <div class="highlighted"> 
-              <div class="text"> <span>2pm: Dear Evan Hansen</span></div>
-              <div class="text"> <span>7pm: Frozen</span></div>
+              <div class="text"> <span></span></div>
+              <div class="text"> <span></span></div>
             </div>
           </div>
         </div>
         <div class="days__item">
-          <div class="days__day">Weekend</div>
+          <div class="days__day">영업장 면적</div>
           <div class="days__list">
-            <p>Meet w/ Rina</p>
+            <p></p>
             <div class="highlighted"> 
-              <div class="text"> <span>2pm: Chicago</span></div>
-              <div class="text"> <span>7pm: Mean Girls</span></div>
+              <div class="text"> <span></span></div>
+              <div class="text"> <span></span></div>
             </div>
           </div>
         </div>
       </div>
-      <div class="notes"><span>notes</span>
-        <div class="notes__list">
-           - Follow-up customer meet email<br/>- Flight BOS-JFK: 2pm on 29 Apr</div>
+      
+      <div class="notes"><span>뭐넣지?</span>
+        <div class="notes__list">어떤거 넣을지 고민중</div>
       </div>
       <div class="expenses">
-        <h4>Weekly Expenses</h4>
-        <div class="expenses__box"><span class="expenses__title">🏠</span><span class="expenses__amount">$ 400</span></div>
-        <div class="expenses__box"><span class="expenses__title">📝</span><span class="expenses__amount">$ 120</span></div>
-        <div class="expenses__box"><span class="expenses__title">🍟</span><span class="expenses__amount">$ 175</span></div>
-        <div class="expenses__box"><span class="expenses__title">🚆</span><span class="expenses__amount">$ 42</span></div>
-        <div class="expenses__box"><span class="expenses__title">📽️</span><span class="expenses__amount">$ 520</span></div>
-        <div class="expenses__box"><span class="expenses__title">💸</span><span class="expenses__amount">$ 200</span></div>
-        <div class="savings"><span class="expenses__title">Savings:</span><span class="expenses__amount">$ 145</span></div>
+        <h4>기타 정보</h4>
+        <div class="expenses__box"><span class="expenses__title">[처분일자]</span><span class="expenses__amount">20020805</span></div>
+        <div class="expenses__box"><span class="expenses__title">[법적근거]</span><span class="expenses__amount">식품위생법과 그 외 법 제25조 제36조 제42조</span></div>
+        <div class="expenses__box"><span class="expenses__title">[처분내용]</span><span class="expenses__amount">영업정지</span></div>
+        <div class="expenses__box"><span class="expenses__title">[처분기간]</span><span class="expenses__amount">2</span></div>
+
+        <div class="savings"><span class="expenses__title">위반내용 : </span><span class="expenses__amount">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 가을하늘 공활한데 높고 구름 없이 </span></div>
       </div>
       <!-- <div class="picture">
         <div class="picture__border"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/TSNY.jpg"/>
@@ -602,20 +605,20 @@
              Times Square,<br/>NYC &hearts; </figcaption>
         </div>
       </div> -->
-      <div class="goals"><span>weekly</span><span>goals</span>
+      <div class="goals"><span></span><span>장사 여부</span>
         <div class="goals__inner">
           <div class="goals__list"> 
             <div class="goals__item">
-              <div class="goals__item__checkbox"> <span>&#10004;</span></div>
-              <div class="goals__item__desc">One Codepen	</div>
+              <div class="goals__item__checkbox"> <!-- <span>&#10004;</span> --></div>
+              <div class="goals__item__desc">상태 : 자진폐업</div>		<!-- 폐업구분 칼럼 활용 -->
             </div>
             <div class="goals__item">
               <div class="goals__item__checkbox"></div>
-              <div class="goals__item__desc">One Blog Post</div>
+              <div class="goals__item__desc">폐업 일자 : 20080502</div> 	<!-- 상태가 빈칸이 아닐때 나타나게 가능한지? -->
             </div>
             <div class="goals__item">
               <div class="goals__item__checkbox"></div>
-              <div class="goals__item__desc">One Illustration</div>
+              <div class="goals__item__desc">폐업 사유 : 영업 부진</div>
             </div>
           </div>
         </div>
