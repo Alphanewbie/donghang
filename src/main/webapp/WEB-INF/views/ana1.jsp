@@ -60,101 +60,9 @@
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <style>
-* {
-	box-sizing: border-box;
-}
 
-/* body {
-  background: #333;
-} */
-.centered {
-	width: 550px;
-	height: 110px;
-	margin: auto;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
 
-.group {
-	width: 100%;
-	height: 110px;
-	overflow: hidden;
-	position: relative;
-}
 
-label {
-	position: absolute;
-	top: 36.6666666667px;
-	color: gray;
-	/* color: rgba(255, 255, 255, 0.5); */
-	font: 400 36.6666666667px Roboto;
-	cursor: text;
-	transition: .25s ease;
-}
-
-input {
-	display: block;
-	width: 100%;
-	padding-top: 36.6666666667px;
-	border: none;
-	border-radius: 0;
-	/* color: white; */
-	color: black;
-	font: Roboto;
-	background: white;
-	font-size: 36.6666666667px;
-	transition: .3s ease;
-}
-
-input:valid ~ label {
-	top: 0;
-	font: 700 22px Roboto;
-	color: rgba(255, 255, 255, 0.5);
-}
-
-input:focus {
-	outline: none;
-}
-
-input:focus ~ label {
-	top: 0;
-	font: 700 22px Roboto;
-	color: #2196f3;
-}
-
-input:focus ~ .bar:before {
-	transform: translateX(0);
-}
-
-input:-webkit-autofill {
-	-webkit-box-shadow: 0 0 0px 1000px #333 inset;
-	-webkit-text-fill-color: white !important;
-}
-
-.bar {
-	background: rgba(255, 255, 255, 0.5);
-	content: '';
-	width: 550px;
-	height: 3.6666666667px;
-	transition: .3s ease;
-	position: relative;
-}
-
-.bar:before {
-	content: '';
-	position: absolute;
-	width: 100%;
-	height: 150%;
-	background: #2196f3;
-	transform: translateX(-100%);
-}
-
-::selection {
-	background: rgba(33, 150, 243, 0.3);
-}
 </style>
 
 </head>
@@ -184,7 +92,7 @@ input:-webkit-autofill {
 				</button>
 				<div class="collapse navbar-collapse" id="ftco-nav">
 					<ul class="navbar-nav ml-auto">
-						<li class="dropdown nav-item"><a href="localhost:8000/donghang/analysis"
+						<li class="dropdown nav-item"><a href="#"
 							class="dropdown-toggle nav-link icon d-flex align-items-center"
 							data-toggle="dropdown"> <i class="ion-ios-apps mr-2"></i> 분 석
 								<b class="caret"></b>
@@ -208,30 +116,9 @@ input:-webkit-autofill {
 		<!-- END nav -->
 
 		<section class="hero-wrap js-fullheight">
-			<div class="container">
-				<div
-					class="row description js-fullheight align-items-center justify-content-center">
 
-					<div class="centered">
-						<div class="group">
-							<form action="search" method="GET">
-								<input id="name" name="keyword" type="text" required="required"
-									/> <label for="name">업소명을
-									입력해주세요.</label>
-								<div class="bar"></div>
-							</form>
-						</div>
-					</div>
 
-					<!-- <div class="col-md-8 text-center">
-  					<div class="text">
-  						<h1>Tools UI Kit.</h1>
-  						<h4 class="mb-5">Free Bootstrap 4 UI Kit on Tools Design.</h4>
-  						<p><a href="#" class="btn btn-white px-4 py-3"><i class="ion-ios-cloud-download mr-2"></i>Download Tools</a></p>
-  					</div>
-  				</div> -->
-				</div>
-			</div>
+
 		</section>
 
 

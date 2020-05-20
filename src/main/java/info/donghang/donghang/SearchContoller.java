@@ -1,14 +1,10 @@
 package info.donghang.donghang;
 
-import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -35,7 +31,7 @@ public class SearchContoller {
 			list = dao.upsoSearch(test);
 		}
 		else {
-//			Å°¿öµå 1°³Â¥¸® °Ë»ö
+//			Å°ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½Â¥ï¿½ï¿½ ï¿½Ë»ï¿½
 			list = dao.upsoSearch(keyword);
 		}
 		if(list==null)
@@ -51,7 +47,7 @@ public class SearchContoller {
 	@RequestMapping(value = "/simularsearch", method = RequestMethod.GET)
 	public @ResponseBody List<String> simularsearch(String keyword) {
 		List<SearchVO> list = dao.upsoSimular(keyword);
-		List<String> result = new ArrayList<>();
+		List<String> result = new ArrayList<>(); 
 		for(int i=0;i<list.size();i++) {
 			SearchVO item = list.get(i);
 			result.add(item.getUpso_nm()+" / "+item.getSite_addr());
