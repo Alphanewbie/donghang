@@ -503,16 +503,16 @@ text-align : center;
         <div class="days__item">
           <div class="days__day">허가번호</div>
           <div class="days__list">
-            <p>3090000</p>
-            <p>112</p>
-            <p>1996</p>
-            <p>00120</p>
+            <p>${item.cgg_code}</p>
+            <p>${item.snt_cob_code}</p>
+            <p>${item.yy}</p>
+            <p>${item.upso_sno}</p>
           </div>
         </div>
         <div class="days__item">
           <div class="days__day">전화번호</div>
           <div class="days__list">
-            <p>  02 9985640  </p>
+            <p> ${item.upso_site_telno}</p>
             
             <div class="highlighted"> 
               <div class="text"> <span></span></div>
@@ -522,7 +522,7 @@ text-align : center;
         <div class="days__item">
           <div class="days__day">법인명</div>
           <div class="days__list">
-            <p></p>
+            <p>${item.bup_nm}</p>
             
             <div class="highlighted"> 
               <div class="text"> <span></span></div>
@@ -532,7 +532,7 @@ text-align : center;
         <div class="days__item">
           <div class="days__day">업종명</div>
           <div class="days__list">
-            <p>식품자동판매기영업</p>
+            <p>${ item.snt_uptae_nm }</p>
             <div class="highlighted"> 
               <div class="text"> <span></span></div>
               <div class="text"> <span></span></div>
@@ -542,8 +542,7 @@ text-align : center;
         <div class="days__item">
           <div class="days__day">허가신고일</div>
           <div class="days__list">
-            <p>19960604</p>
-            
+            <p>${ item.perm_nt_ymd }</p>
             <div class="highlighted"> 
               <div class="text"> <span></span></div>
               <div class="text"> <span></span></div>
@@ -620,7 +619,10 @@ text-align : center;
 var geocoder = new kakao.maps.services.Geocoder();
 //주소로 좌표를 검색합니다
 
-var addrinput = '${ item.site_addr_rd}';
+var addrinput = '${ item.site_addr_rd}'
+if(addrinput == '    ') {
+	addrinput ='${ item.site_addr}';
+}
 console.log(addrinput);
 geocoder.addressSearch(addrinput, function(result, status) {
 	 var coords=null;
