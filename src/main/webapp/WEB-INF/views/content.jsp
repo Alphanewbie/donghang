@@ -637,11 +637,11 @@ text-align : center;
 var geocoder = new kakao.maps.services.Geocoder();
 
 //주소로 좌표를 검색합니다
-geocoder.addressSearch('제주특별자치도 제주시 첨단로 242', function(result, status) {
+geocoder.addressSearch('서울특별시 은평구 진관동  398번지 4호  ', function(result, status) {
 	 var coords=null;
 // 정상적으로 검색이 완료됐으면 
  if (status === kakao.maps.services.Status.OK) {
-
+	
     coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
     
