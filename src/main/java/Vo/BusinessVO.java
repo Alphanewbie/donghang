@@ -9,6 +9,7 @@ public class BusinessVO {
     private String snt_cob_nm;
     private int perm_nt_ymd;
     private String upso_nm ;
+    private String site_addr_rd;
     private String site_addr;
     private String upso_site_telno;
     private int bman_stdt;
@@ -72,6 +73,12 @@ public class BusinessVO {
 	}
 	public void setUpso_nm(String upso_nm) {
 		this.upso_nm = upso_nm;
+	}
+	public String getSite_addr_rd() {
+		return site_addr_rd;
+	}
+	public void setSite_addr_rd(String site_addr_rd) {
+		this.site_addr_rd = site_addr_rd;
 	}
 	public String getSite_addr() {
 		return site_addr;

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import Dao.upsoDAO;
 import Vo.BusinessVO;
@@ -21,7 +22,8 @@ public class SearchContoller {
 	upsoDAO dao = null;
 	
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public String home(String keyword) {
+	public ModelAndView home(String keyword) {
+		ModelAndView mav = new ModelAndView();
 		List<BusinessVO> list = null;
 		String[] search = keyword.split("/",2);
 //		System.out.println(search[0] +"/here/"+ search[1]);
@@ -34,14 +36,23 @@ public class SearchContoller {
 //			Ű���� 1��¥�� �˻�
 			list = dao.upsoSearch(keyword);
 		}
-		if(list==null)
-			return "home";
+		if(list==null) {
+			mav.setViewName("home");
+			return mav;
+		}
+		else if(list.size()==1) {
+			mav.addObject("item", list.get(0));
+			System.out.print(list.get(0).getSite_addr_rd());
+			mav.setViewName("content");
+			return mav;
+		}
 		for(int i=0;i<list.size();i++) {
 			System.out.println(list.get(i).getUpso_nm());
 		}
+
 //		upsoSearch(test);
 		
-		return "home";
+		return mav;
 	}
 	
 	@RequestMapping(value = "/simularsearch", method = RequestMethod.GET)
