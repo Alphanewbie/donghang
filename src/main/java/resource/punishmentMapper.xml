@@ -10,7 +10,7 @@
 		select
 		cgg_code,
 		adm_dispo_ymd,
-		gnt_no,
+		TO_CHAR(gnt_no) as gnt_no,
 		snt_cob_nm,
 		snt_uptae_nm,
 		upso_nm,
@@ -25,9 +25,9 @@
 		dispo_gigan,
 		insp_gbn_code,
 		take_ymd
-		from biz_d where upso_nm like '%'||#{upso_nm}||'%' and site_addr like
-		'%'||#{site_addr}||'%'
-
+		from biz_d 
+		where upso_nm like '%'||#{upso_nm}||'%' and site_addr like '%'||#{site_addr}||'%'
+		ORDER BY ADM_DISPO_YMD desc
 	</select>
 
 </mapper>

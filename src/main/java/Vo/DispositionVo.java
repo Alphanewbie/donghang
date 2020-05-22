@@ -4,7 +4,7 @@ public class DispositionVo {
 
 	private int cgg_code;
 	private String adm_dispo_ymd;
-	private int gnt_no;
+	private String gnt_no;
 	private String snt_cob_nm;
 	private String snt_uptae_nm;
 	private String upso_nm;
@@ -33,10 +33,10 @@ public class DispositionVo {
 	public void setAdm_dispo_ymd(String adm_dispo_ymd) {
 		this.adm_dispo_ymd = adm_dispo_ymd;
 	}
-	public int getGnt_no() {
+	public String getGnt_no() {
 		return gnt_no;
 	}
-	public void setGnt_no(int gnt_no) {
+	public void setGnt_no(String gnt_no) {
 		this.gnt_no = gnt_no;
 	}
 	public String getSnt_cob_nm() {
