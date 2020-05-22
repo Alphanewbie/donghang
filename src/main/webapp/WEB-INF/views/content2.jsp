@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page session="false"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
+	import="Vo.BusinessVO"%>
+
 <html>
 <head>
 <title>Home</title>
@@ -521,7 +522,7 @@ text-align : center;
   <div class="notebook">
     <div class="notebook__inner">
       <div class="title"> 
-        <h1>차랑골숯불구이</h1>
+        <h1>${ item.upso_sno }</h1>
         <h3>서울특별시 도봉구 창동  552번지 1호  </h3>
       </div>
       <div class="days">

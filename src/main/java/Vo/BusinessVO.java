@@ -2,6 +2,7 @@ package Vo;
 
 public class BusinessVO {
 
+
     private int cgg_code;			//시군구코드
     private int snt_cob_code;		//업종 코드
     private int yy;					//년도
@@ -26,7 +27,7 @@ public class BusinessVO {
     private int cn_perm_stdt ;
     private int cn_perm_enddt;
     private String cn_perm_nt_sayu ;
-    private String pern_nt_cn ;
+//    private String pern_nt_cn ;
     private String perm_nt_cn;
     private int geoLat;
     private int geoLon; 
@@ -72,6 +73,12 @@ public class BusinessVO {
 	}
 	public void setUpso_nm(String upso_nm) {
 		this.upso_nm = upso_nm;
+	}
+	public String getSite_addr_rd() {
+		return site_addr_rd;
+	}
+	public void setSite_addr_rd(String site_addr_rd) {
+		this.site_addr_rd = site_addr_rd;
 	}
 	public String getSite_addr() {
 		return site_addr;
@@ -175,12 +182,12 @@ public class BusinessVO {
 	public void setCn_perm_nt_sayu(String cn_perm_nt_sayu) {
 		this.cn_perm_nt_sayu = cn_perm_nt_sayu;
 	}
-	public String getPern_nt_cn() {
-		return pern_nt_cn;
-	}
-	public void setPern_nt_cn(String pern_nt_cn) {
-		this.pern_nt_cn = pern_nt_cn;
-	}
+//	public String getPern_nt_cn() {
+//		return pern_nt_cn;
+//	}
+//	public void setPern_nt_cn(String pern_nt_cn) {
+//		this.pern_nt_cn = pern_nt_cn;
+//	}
 	public String getPerm_nt_cn() {
 		return perm_nt_cn;
 	}
