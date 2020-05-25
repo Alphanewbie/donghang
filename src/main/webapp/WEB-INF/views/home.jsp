@@ -308,8 +308,7 @@
 
 						<div class="group">
 							<form action="search" method="GET">
-<<<<<<< HEAD
-=======
+
 							
  			<!-- 추가한 부분 -->
 <!-- <div class="center">
@@ -320,7 +319,7 @@
   </select>
 </div> -->
 							
->>>>>>> 04d43668b58de984f425d0dd27fbfe870cdbdb5a
+
 								<input id="name" name="keyword" type="text" required="required" /> <label
 									for="name">업소명을 입력해주세요.</label>
 								<div class="bar"></div>
@@ -382,10 +381,7 @@
 	<script src="<c:url value="/resources/js/owl.carousel.min.js" />"></script>
 	<script src="<c:url value="/resources/js/jquery.magnific-popup.min.js" />"></script>
 	<script src="<c:url value="/resources/js/aos.js" />"></script>
-<<<<<<< HEAD
-=======
 
->>>>>>> 04d43668b58de984f425d0dd27fbfe870cdbdb5a
 	<script src="<c:url value="/resources/js/nouislider.min.js" />"></script>
 	<script src="<c:url value="/resources/js/moment-with-locales.min.js" />"></script>
 	<script src="<c:url value="/resources/js/bootstrap-datetimepicker.min.js" />"></script>

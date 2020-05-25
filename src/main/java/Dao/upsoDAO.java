@@ -56,7 +56,7 @@ public class upsoDAO {
     public List<SearchVO> upsoSimular(String keyword) {
         List<SearchVO> list = new ArrayList<SearchVO>();
         String statement = null;
-        
+        System.out.println(keyword);
 //        if(openstatus.equals("all"))
             statement = "resource.UpsoMapper.simularsearch";
 //        else if(openstatus.equals("closed"))
