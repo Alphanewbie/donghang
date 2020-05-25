@@ -653,6 +653,51 @@
 	}
 }
 */
+
+/* 검색 메뉴 추가 */
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 50px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 50px;	/* 40 */
+  height: 50px;		/* 36 */
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
 	</style>
 
 </head>
@@ -679,6 +724,17 @@
 					<span class="oi oi-menu"></span> Menu
 				</button>
 				<div class="collapse navbar-collapse" id="ftco-nav">
+					
+					<!-- 검색 메뉴 추가 -->
+							<div class="wrap">
+   <div class="search">
+      <input type="text" class="searchTerm" placeholder="What are you looking for?">
+      <button type="submit" class="searchButton">
+        <!-- <i class="fa fa-search"></i> -->검색
+     </button>
+   </div>
+</div>
+					
 					<ul class="navbar-nav ml-auto">
 						<li class="dropdown nav-item"><a href="#"
 								class="dropdown-toggle nav-link icon d-flex align-items-center" data-toggle="dropdown">
@@ -692,6 +748,9 @@
 										class="ion-ios-document mr-2"></i>
 									데이터 분석 </a>
 							</div>
+
+
+
 						</li>
 						<li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i
 									class="ion-ios-cloud-download mr-2"></i> Rest API</a></li>

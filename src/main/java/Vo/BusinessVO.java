@@ -10,6 +10,7 @@ public class BusinessVO {
     private String snt_cob_nm;		//업종명
     private int perm_nt_ymd;		//허가신고일
     private String upso_nm ;		//업소명
+    private String site_addr_rd;	//도로명주소
     private String site_addr;		//소재지지번
     private String upso_site_telno;	//소재지전화번호
     private int bman_stdt;			//
