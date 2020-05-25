@@ -34,6 +34,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/flaticon.css" type="text/css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/icomoon.css" type="text/css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" type="text/css">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<style>
 		.container111 {
 
@@ -654,6 +655,7 @@
 }
 */
 
+
 /* 검색 메뉴 추가 */
 .search {
   width: 100%;
@@ -701,6 +703,15 @@
 	height : 85%
 }
 
+
+		/*Resize the wrap to see the search bar change!*/
+		.wrap {
+			width: 30%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
 	</style>
 
 </head>
@@ -718,17 +729,17 @@
 					<span class="oi oi-menu"></span> Menu
 				</button>
 				<div class="collapse navbar-collapse" id="ftco-nav">
-					
-					<!-- 검색 메뉴 추가 -->
-							<div class="wrap">
-   <div class="search">
-      <input type="text" class="searchTerm" placeholder="업소명을 입력해주세요.">
-      <button type="submit" class="searchButton">
-        <!-- <i class="fa fa-search"></i> -->검색
-     </button>
-   </div>
-</div>
-					
+
+
+					<div class="wrap">
+						<div class="search">
+							<input type="text" id="name" class="searchTerm" placeholder="What are you looking for?">
+							<button type="submit" class="searchButton">
+								<!-- <i class="fa fa-search"></i> -->검색
+							</button>
+						</div>
+					</div>
+
 					<ul class="navbar-nav ml-auto">
 						<li class="dropdown nav-item"><a href="#"
 								class="dropdown-toggle nav-link icon d-flex align-items-center" data-toggle="dropdown">
@@ -737,10 +748,9 @@
 							</a>
 							<div class="dropdown-menu dropdown-menu-left">
 								<a href="http://localhost:8000/donghang/analysis" class="dropdown-item"><i
-										class="ion-ios-apps mr-2"></i> 기본
-									분석 </a> <a href="http://localhost:8000/donghang/data" class="dropdown-item"><i
-										class="ion-ios-document mr-2"></i>
-									데이터 분석 </a>
+										class="ion-ios-apps mr-2"></i> 기본 분석 </a> <a
+									href="http://localhost:8000/donghang/data" class="dropdown-item"><i
+										class="ion-ios-document mr-2"></i>데이터 분석 </a>
 							</div>
 
 
@@ -946,9 +956,9 @@
 			//주소로 좌표를 검색합니다
 
 			var addrinput = '${ item.site_addr_rd}'
-			//if(addrinput == '    ') {
-			//	addrinput ='${ item.site_addr}';
-			//}
+			if (addrinput == '    ') {
+				addrinput = '${ item.site_addr}';
+			}
 			console.log(addrinput);
 			geocoder
 				.addressSearch(
@@ -1032,9 +1042,62 @@
 	<script src="<c:url value="/resources/js/bootstrap-datetimepicker.min.js" />"></script>
 	<script src="<c:url value="/resources/js/main.js" />"></script>
 
+	
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
 	<!-- 테이블환경 -->
 	<script>
 
+		$(function () { //화면 다 뜨면 시작
+			$("#name").autocomplete({
+				source: function (request, response) {
+					var value = $('#name').val()
+					$.ajax({
+						type: 'get',
+						url: "simularsearch?keyword=" + value,
+						dataType: "json",
+						//data: {"param":"param"},
+						success: function (data) {
+							//서버에서 json 데이터 response 후 목록에 추가
+							response($.map(data, function (item) { //json[i] 번째 에 있는게 item 임.
+								console.log(item)
+								return {
+									label: item,
+									value: item
+								}
+							}));
+						}
+					});
+				}, // source 는 자동 완성 대상
+				select: function (event, ui) { //아이템 선택시
+					console.log(ui);//사용자가 오토컴플릿이 만들어준 목록에서 선택을 하면 반환되는 객체
+					console.log(ui.item.label); //김치 볶음밥label
+					console.log(ui.item.value); //김치 볶음밥
+					console.log(ui.item.test); //김치 볶음밥test
+
+				},
+				focus: function (event, ui) { //포커스 가면
+					return false;//한글 에러 잡기용도로 사용됨
+				},
+				minLength: 2,// 최소 글자수
+				autoFocus: true, //첫번째 항목 자동 포커스 기본값 false
+				classes: { //잘 모르겠음
+					"ui-autocomplete": "highlight"
+				},
+				delay: 500, //검색창에 글자 써지고 나서 autocomplete 창 뜰 때 까지 딜레이 시간(ms)
+				//	            disabled: true, //자동완성 기능 끄기
+				position: {
+					my: "right top",
+					at: "right bottom"
+				}, //잘 모르겠음
+				close: function (event) { //자동완성창 닫아질때 호출
+					console.log(event);
+				}
+			});
+
+		});
 	</script>
 
 
