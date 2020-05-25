@@ -65,7 +65,7 @@ public class SearchContoller {
 	@RequestMapping(value = "/simularsearch", method = RequestMethod.GET)
 	public @ResponseBody List<String> simularsearch(String keyword) {
 		List<SearchVO> list = dao.upsoSimular(keyword);
-		List<String> result = new ArrayList<>(); 
+		List<String> result = new ArrayList<String>(); 
 		for(int i=0;i<list.size();i++) {
 			SearchVO item = list.get(i);
 			result.add(item.getUpso_nm()+" / "+item.getSite_addr());

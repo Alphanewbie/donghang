@@ -2,17 +2,18 @@ package Vo;
 
 public class BusinessVO {
 
-    private int cgg_code;
-    private int snt_cob_code;
-    private int yy;
-    private String upso_sno;
-    private String snt_cob_nm;
-    private int perm_nt_ymd;
+
+    private int cgg_code;			//�떆援곌뎄肄붾뱶
+    private int snt_cob_code;		//�뾽醫� 肄붾뱶
+    private int yy;					//�뀈�룄
+    private String upso_sno;		//�뾽�냼�씪�젴踰덊샇
+    private String snt_cob_nm;		//�뾽醫낅챸
+    private int perm_nt_ymd;		//�뿀媛��떊怨좎씪
     private String upso_nm ;
     private String site_addr_rd;
-    private String site_addr;
-    private String upso_site_telno;
-    private int bman_stdt;
+    private String site_addr;		//�냼�옱吏�吏�踰�
+    private String upso_site_telno;	//�냼�옱吏��쟾�솕踰덊샇
+    private int bman_stdt;			//
     private String bup_nm;
     private int site_stdt;
     private String admdng_nm;
