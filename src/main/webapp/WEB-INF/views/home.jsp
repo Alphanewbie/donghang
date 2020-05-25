@@ -308,6 +308,7 @@
 
 						<div class="group">
 							<form action="search" method="GET">
+
 							
  			<!-- 추가한 부분 -->
 <!-- <div class="center">
@@ -318,6 +319,7 @@
   </select>
 </div> -->
 							
+
 								<input id="name" name="keyword" type="text" required="required" /> <label
 									for="name">업소명을 입력해주세요.</label>
 								<div class="bar"></div>

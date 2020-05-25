@@ -19,6 +19,7 @@ public class DispositionVo {
 	private int dispo_gigan;
 	private String insp_gbn_code;
 	private String take_ymd;
+	private String bas_law_clean;
 	
 	
 	public int getCgg_code() {
@@ -123,7 +124,13 @@ public class DispositionVo {
 	public void setTake_ymd(String take_ymd) {
 		this.take_ymd = take_ymd;
 	}
-
+	public String getBas_law_clean() {
+		return bas_law_clean;
+	}
+	public void setBas_law_clean(String bas_law_clean) {
+		this.bas_law_clean = bas_law_clean;
+	}
+	
 	
 
 }

@@ -2,7 +2,6 @@ package Vo;
 
 public class BusinessVO {
 
-
     private int cgg_code;			//시군구코드
     private int snt_cob_code;		//업종 코드
     private int yy;					//년도
