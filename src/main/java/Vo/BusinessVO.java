@@ -2,6 +2,7 @@ package Vo;
 
 public class BusinessVO {
 
+
     private int cgg_code;			//시군구코드
     private int snt_cob_code;		//업종 코드
     private int yy;					//년도
@@ -12,7 +13,7 @@ public class BusinessVO {
     private String site_addr_rd;	//도로명주소
     private String site_addr;		//소재지지번
     private String upso_site_telno;	//소재지전화번호
-    //
+
     private String bup_nm;
     private int site_stdt;
     private String admdng_nm;
@@ -30,7 +31,8 @@ public class BusinessVO {
 //    private String pern_nt_cn ;
     private String perm_nt_cn;
     private int geoLat;
-    private int geoLon; 
+    private int geoLon;
+	private String site_addr_rd; 
     
 	public int getCgg_code() {
 		return cgg_code;
