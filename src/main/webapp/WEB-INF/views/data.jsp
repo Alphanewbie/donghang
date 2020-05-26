@@ -3,7 +3,7 @@
 <%@ page session="false"%>
 <html>
 <head>
-<title>Home</title>
+<title>우리동네 행정처분정보-동행</title>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -61,9 +61,6 @@
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <style>
 
-/* coming soon */
-
-
 h3 {
   font-size: 1.5em;
   font-weight: 100;
@@ -119,18 +116,7 @@ h3 {
 </head>
 <body>
 
-	<!-- 
-<div class="centered">
-  <div class="group">
-    <input id="name" type="text" required="required"/>
-    <label for="name">업소명을 입력해주세요.</label>
-    <div class="bar"></div>
-  </div>
-</div> -->
-
-
 	<div class="main-section">
-
 		<nav
 			class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
 			id="ftco-navbar">
@@ -169,19 +155,15 @@ h3 {
 		<section class="hero-wrap js-fullheight">
 
 		<!-- coming soon -->
-<div class="container333">
-
-  <h3><strong>Data Analysis</strong><br><br> coming soon</h3>
-  <div class="bar">
-    <div class="progress"></div>
-  </div>
-</div>
+			<div class="container333">
+				<h3><strong>Data Analysis</strong><br><br> coming soon</h3>
+  					<div class="bar">
+    					<div class="progress"></div>
+  					</div>
+			</div>
 
 		</section>
-
-
-
-
+	
 		<footer class="ftco-section ftco-section-2">
 			<div class="col-md-12 text-center">
 				<p class="mb-0">
@@ -197,7 +179,6 @@ h3 {
 				</p>
 			</div>
 		</footer>
-
 	</div>
 
 	<!-- loader -->
@@ -209,11 +190,6 @@ h3 {
 				stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg>
 	</div>
 
-	
-
-	
-	
-	
 	<script src="<c:url value="/resources/js/jquery.min.js" />"></script>
 	<script
 		src="<c:url value="/resources/js/jquery-migrate-3.0.1.min.js" />"></script>
@@ -223,15 +199,12 @@ h3 {
 	<script src="<c:url value="/resources/js/jquery.waypoints.min.js" />"></script>
 	<script src="<c:url value="/resources/js/jquery.stellar.min.js" />"></script>
 	<script src="<c:url value="/resources/js/owl.carousel.min.js" />"></script>
-	<script
-		src="<c:url value="/resources/js/jquery.magnific-popup.min.js" />"></script>
+	<script src="<c:url value="/resources/js/jquery.magnific-popup.min.js" />"></script>
 	<script src="<c:url value="/resources/js/aos.js" />"></script>
 
 	<script src="<c:url value="/resources/js/nouislider.min.js" />"></script>
-	<script
-		src="<c:url value="/resources/js/moment-with-locales.min.js" />"></script>
-	<script
-		src="<c:url value="/resources/js/bootstrap-datetimepicker.min.js" />"></script>
+	<script	src="<c:url value="/resources/js/moment-with-locales.min.js" />"></script>
+	<script	src="<c:url value="/resources/js/bootstrap-datetimepicker.min.js" />"></script>
 	<script src="<c:url value="/resources/js/main.js" />"></script>
 
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -305,14 +278,5 @@ h3 {
 		
 	</script>
 	
-	<!-- coming soon -->
-	<script>
-	
-	
-	
-	</script>
-
-
-
 </body>
 </html>

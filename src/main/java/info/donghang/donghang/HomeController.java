@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
 	
 	
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 
-		System.out.println("½Ã¹ß");
+		System.out.println("ï¿½Ã¹ï¿½");
 		return "home";
 	}
 	

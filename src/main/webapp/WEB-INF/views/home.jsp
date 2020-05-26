@@ -4,7 +4,7 @@
 <html>
 
 <head>
-	<title>Home</title>
+	<title>우리동네 행정처분정보-동행</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -36,234 +36,102 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" type="text/css">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<style>
-		* {
-			box-sizing: border-box;
-		}
-
-		/* body {
-  background: #333;
-} */
-		.centered {
-			width: 550px;			/* 550 */
-			height: 110px;			/* 110 */
-			margin: auto;
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-		}
-
-		.group {
-			width: 100%;
-			height: 110px;
-			overflow: hidden;
-			position: static;		/* relative */
-		}
-
-		label {
-			position: absolute;		/* absolute */
-			top: 36.6666666667px;
-			color: gray;
-			/* color: rgba(255, 255, 255, 0.5); */
-			font: 400 36.6666666667px Roboto;
-			cursor: text;
-			transition: .25s ease;
-		}
-
-		input {
-			display: block;
-			width: 100%;
-			padding-top: 36.6666666667px;
-			border: none;
-			border-radius: 0;
-			/* color: white; */
-			color: black;
-			font: Roboto;
-			background: white;
-			font-size: 36.6666666667px;
-			transition: .3s ease;
-		}
-
-		input:valid~label {
-			top: 0;
-			font: 700 22px Roboto;
-			color: rgba(255, 255, 255, 0.5);
-		}
-
-		input:focus {
-			outline: none;
-		}
-
-		input:focus~label {
-			top: 0;
-			font: 700 22px Roboto;
-			color: #2196f3;
-		}
-
-		input:focus~.bar:before {
-			transform: translateX(0);
-		}
-
-		input:-webkit-autofill {
-			-webkit-box-shadow: 0 0 0px 1000px #333 inset;
-			-webkit-text-fill-color: white !important;
-		}
-
-		.bar {
-			background: rgba(255, 255, 255, 0.5);
-			content: '';
-			width: 550px;
-			height: 3.6666666667px;
-			transition: .3s ease;
-			position: relative;
-		}
-
-		.bar:before {
-			content: '';
-			position: absolute;
-			width: 100%;
-			height: 150%;
-			background: #2196f3;
-			transform: translateX(-100%);
-		}
-
-		::selection {
-			background: rgba(33, 150, 243, 0.3);
-		}
-		
-		
-		/* 추가한 부분 */
-
-/** Custom Select **/
-/* 
-.center {
-	
+* {
+	box-sizing: border-box;
 }
 
-.custom-select-wrapper {
-  position: relative;
-  display: inline-block;
-  user-select: none;
+.centered {
+	width: 550px;			/* 550 */
+	height: 110px;			/* 110 */
+	margin: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
-  .custom-select-wrapper select {
-    display: none;
-  }
-  .custom-select {
-    position: relative;
-    display: inline-block;
-  }
-    .custom-select-trigger {
-      position: relative;
-      display: block;
-      width: 130px;
-      padding: 0 84px 0 22px;
-      font-size: 22px;
-      font-weight: 300;
-      color: #fff;
-      line-height: 60px;
-      background: #5c9cd8;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-      .custom-select-trigger:after {
-        position: absolute;
-        display: block;
-        content: '';
-        width: 10px; height: 10px;
-        top: 50%; right: 25px;
-        margin-top: -3px;
-        border-bottom: 1px solid #fff;
-        border-right: 1px solid #fff;
-        transform: rotate(45deg) translateY(-50%);
-        transition: all .4s ease-in-out;
-        transform-origin: 50% 0;
-      }
-      .custom-select.opened .custom-select-trigger:after {
-        margin-top: 3px;
-        transform: rotate(-135deg) translateY(-50%);
-      }
-  .custom-options {
-    position: absolute;
-    display: block;
-    top: 100%; left: 0; right: 0;
-    min-width: 100%;
-    margin: 15px 0;
-    border: 1px solid #b5b5b5;
-    border-radius: 4px;
-    box-sizing: border-box;
-    box-shadow: 0 2px 1px rgba(0,0,0,.07);
-    background: #fff;
-    transition: all .4s ease-in-out;
-    
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateY(-15px);
-  }
-  .custom-select.opened .custom-options {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-    transform: translateY(0);
-  }
-    .custom-options:before {
-      position: absolute;
-      display: block;
-      content: '';
-      bottom: 100%; right: 25px;
-      width: 7px; height: 7px;
-      margin-bottom: -4px;
-      border-top: 1px solid #b5b5b5;
-      border-left: 1px solid #b5b5b5;
-      background: #fff;
-      transform: rotate(45deg);
-      transition: all .4s ease-in-out;
-    }
-    .option-hover:before {
-      background: #f9f9f9;
-    }
-    .custom-option {
-      position: relative;
-      display: block;
-      padding: 0 22px;
-      border-bottom: 1px solid #b5b5b5;
-      font-size: 18px;
-      font-weight: 600;
-      color: #b5b5b5;
-      line-height: 47px;
-      cursor: pointer;
-      transition: all .4s ease-in-out;
-    }
-    .custom-option:first-of-type {
-      border-radius: 4px 4px 0 0;
-    }
-    .custom-option:last-of-type {
-      border-bottom: 0;
-      border-radius: 0 0 4px 4px;
-    }
-    .custom-option:hover,
-    .custom-option.selection {
-      background: #f9f9f9;
-    } */
-		
-		
-	</style>
 
+.group {
+	width: 100%;
+	height: 110px;
+	overflow: hidden;
+	position: static;		/* relative */
+}
+
+label {
+	position: absolute;		/* absolute */
+	top: 36.6666666667px;
+	color: gray;
+	/* color: rgba(255, 255, 255, 0.5); */
+	font: 400 36.6666666667px Roboto;
+	cursor: text;
+	transition: .25s ease;
+}
+
+input {
+	display: block;
+	width: 100%;
+	padding-top: 36.6666666667px;
+	border: none;
+	border-radius: 0;
+	/* color: white; */
+	color: black;
+	font: Roboto;
+	background: white;
+	font-size: 36.6666666667px;
+	transition: .3s ease;
+}
+
+input:valid~label {
+	top: 0;
+	font: 700 22px Roboto;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+input:focus {
+	outline: none;
+}
+
+input:focus~label {
+	top: 0;
+	font: 700 22px Roboto;
+	color: #2196f3;
+}
+
+input:focus~.bar:before {
+	transform: translateX(0);
+}
+
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 1000px #333 inset;
+	-webkit-text-fill-color: white !important;
+}
+
+.bar {
+	background: rgba(255, 255, 255, 0.5);
+	content: '';
+	width: 550px;
+	height: 3.6666666667px;
+	transition: .3s ease;
+	position: relative;
+}
+
+.bar:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 150%;
+	background: #2196f3;
+	transform: translateX(-100%);
+}
+
+::selection {
+	background: rgba(33, 150, 243, 0.3);
+}
+			
+</style>
 </head>
-
 <body>
-
-	<!-- 
-<div class="centered">
-  <div class="group">
-    <input id="name" type="text" required="required"/>
-    <label for="name">업소명을 입력해주세요.</label>
-    <div class="bar"></div>
-  </div>
-</div> -->
-
-
 	<div class="main-section">
 
 		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -302,74 +170,33 @@
 		<section class="hero-wrap js-fullheight">
 			<div class="container">
 				<div class="row description js-fullheight align-items-center justify-content-center">
-										
-
 					<div class="centered">
-
 						<div class="group">
 							<form action="search" method="GET">
-
-							
- 			<!-- 추가한 부분 -->
-<!-- <div class="center">
-  <select name="sources" id="sources" class="custom-select sources" placeholder="전체">
-    <option value="profile">전 체</option>
-    <option value="word">영업중</option>
-    <option value="hashtag">폐 업</option>
-  </select>
-</div> -->
-							
-
 								<input id="name" name="keyword" type="text" required="required" /> <label
 									for="name">업소명을 입력해주세요.</label>
 								<div class="bar"></div>
 							</form>
 						</div>
-						
-
-						
 					</div>
-
-					<!-- <div class="col-md-8 text-center">
-  					<div class="text">
-  						<h1>Tools UI Kit.</h1>
-  						<h4 class="mb-5">Free Bootstrap 4 UI Kit on Tools Design.</h4>
-  						<p><a href="#" class="btn btn-white px-4 py-3"><i class="ion-ios-cloud-download mr-2"></i>Download Tools</a></p>
-  					</div>
-  				</div> -->
 				</div>
 			</div>
 		</section>
 
-
-
-
 		<footer class="ftco-section ftco-section-2">
 			<div class="col-md-12 text-center">
 				<p class="mb-0">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					Copyright &copy;
 					<script>
 						document.write(new Date().getFullYear());
 					</script>
 					메인 페이지 제작중입니다. 세세한것 바꾸기 어렵네유
-					<!-- <i class="icon-heart" aria-hidden="true"></i> -->
 					by <a href="https://github.com/Sohottoday" target="_blank">성 연</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 				</p>
 			</div>
 		</footer>
 
 	</div>
-
-	<!-- loader -->
-	<div id="ftco-loader" class="show fullscreen">
-		<svg class="circular" width="48px" height="48px">
-			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-				stroke="#F96D00" /></svg>
-	</div>
-
 
 	<script src="<c:url value="/resources/js/jquery.min.js" />"></script>
 	<script src="<c:url value="/resources/js/jquery-migrate-3.0.1.min.js" />"></script>
@@ -453,12 +280,7 @@
 					console.log(event);
 				}
 			});
-
 		});
 	</script>
-
-
-
 </body>
-
 </html>

@@ -14,7 +14,6 @@ public class BusinessVO {
     private String site_addr;		//소재지지번
     private String upso_site_telno;	//소재지전화번호
 
-    private int bman_stdt;			//
     private String bup_nm;
     private int site_stdt;
     private String admdng_nm;
@@ -95,12 +94,7 @@ public class BusinessVO {
 	public void setUpso_site_telno(String upso_site_telno) {
 		this.upso_site_telno = upso_site_telno;
 	}
-	public int getBman_stdt() {
-		return bman_stdt;
-	}
-	public void setBman_stdt(int bman_stdt) {
-		this.bman_stdt = bman_stdt;
-	}
+
 	public String getBup_nm() {
 		return bup_nm;
 	}
