@@ -34,6 +34,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/flaticon.css" type="text/css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/icomoon.css" type="text/css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" type="text/css">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<style>
 		.container111 {
 
@@ -653,20 +654,69 @@
 	}
 }
 */
+
+
+/* 검색 메뉴 추가 */
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 50px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 50px;	/* 40 */
+  height: 50px;		/* 36 */
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#wordcloud {
+	width : 100%;
+	height : 85%
+}
+
+
+		/*Resize the wrap to see the search bar change!*/
+		.wrap {
+			width: 30%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
 	</style>
 
 </head>
 
 <body>
-
-	<!-- 
-<div class="centered">
-  <div class="group">
-    <input id="name" type="text" required="required"/>
-    <label for="name">업소명을 입력해주세요.</label>
-    <div class="bar"></div>
-  </div>
-</div> -->
 
 
 	<div class="main-section">
@@ -679,6 +729,17 @@
 					<span class="oi oi-menu"></span> Menu
 				</button>
 				<div class="collapse navbar-collapse" id="ftco-nav">
+
+
+					<div class="wrap">
+						<div class="search">
+							<input type="text" id="name" class="searchTerm" placeholder="What are you looking for?">
+							<button type="submit" class="searchButton">
+								<!-- <i class="fa fa-search"></i> -->검색
+							</button>
+						</div>
+					</div>
+
 					<ul class="navbar-nav ml-auto">
 						<li class="dropdown nav-item"><a href="#"
 								class="dropdown-toggle nav-link icon d-flex align-items-center" data-toggle="dropdown">
@@ -687,11 +748,13 @@
 							</a>
 							<div class="dropdown-menu dropdown-menu-left">
 								<a href="http://localhost:8000/donghang/analysis" class="dropdown-item"><i
-										class="ion-ios-apps mr-2"></i> 기본
-									분석 </a> <a href="http://localhost:8000/donghang/data" class="dropdown-item"><i
-										class="ion-ios-document mr-2"></i>
-									데이터 분석 </a>
+										class="ion-ios-apps mr-2"></i> 기본 분석 </a> <a
+									href="http://localhost:8000/donghang/data" class="dropdown-item"><i
+										class="ion-ios-document mr-2"></i>데이터 분석 </a>
 							</div>
+
+
+
 						</li>
 						<li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i
 									class="ion-ios-cloud-download mr-2"></i> Rest API</a></li>
@@ -795,8 +858,8 @@
 						</div>
 
 						<div class="notes">
-							<span>뭐넣지?</span>
-							<div class="notes__list">어떤거 넣을지 고민중</div>
+							<span>워드클라우드</span>
+							<div class="notes__list"><img src="resources/images/test3.png" id="wordcloud"></div>
 						</div>
 						<div class="expenses">
 							<h4>기타 정보</h4>
@@ -875,14 +938,6 @@
 						<div class="music">
 							<div class="music__title">Made by</div>
 							<div class="music__artist">Team DongHang</div>
-							<svg viewBox="0 0 444.18 444.18">
-								<path
-									d="M400.348,294.485c-8.014-20.093-24.798-33.091-46.049-35.662c-34.474-4.172-72.55,19.051-104.452,63.713   C178.301,422.701,110.164,429.493,90.976,429.168c-16.64-0.268-27.452-5.433-30.785-10.433   c-8.769-13.154,9.513-36.94,20.978-48.972c8.255,6.058,18.181,9.334,28.613,9.334c12.955,0,25.134-5.045,34.294-14.206   l106.461-106.46c2.786,0.3,5.602,0.467,8.444,0.467c20.7,0,40.162-8.062,54.801-22.7c14.638-14.638,22.699-34.1,22.699-54.801   c0-20.701-8.062-40.163-22.699-54.801c-30.219-30.217-79.385-30.215-109.602,0c-14.638,14.638-22.699,34.1-22.699,54.801   c0,2.842,0.167,5.658,0.467,8.444L75.488,296.304c-9.161,9.16-14.206,21.339-14.206,34.294c0,10.412,3.265,20.319,9.3,28.564   c-4.132,4.317-10.097,11.035-15.416,18.867c-16.741,24.653-13.295,40.269-7.456,49.027c6.927,10.392,23.011,16.788,43.023,17.11   c0.541,0.009,1.089,0.013,1.651,0.013c17.095,0,43.821-4.224,76.704-23.5c33.207-19.465,64.485-49.552,92.964-89.424   c28.193-39.471,62.012-60.985,90.444-57.541c15.637,1.891,27.999,11.487,33.918,26.327c10.44,26.179-0.117,62.094-28.242,96.072   c-8.815,10.649-16.981,21.185-24.273,31.314c-2.42,3.362-1.656,8.049,1.705,10.469s8.049,1.657,10.469-1.705   c7.096-9.856,15.054-20.123,23.654-30.513C401.406,367.408,412.853,325.841,400.348,294.485z M86.095,354.286   c-6.327-6.327-9.812-14.74-9.812-23.688c0-6.392,1.787-12.505,5.108-17.785l46.177,46.177c-5.28,3.322-11.394,5.108-17.785,5.108   C100.835,364.098,92.422,360.613,86.095,354.286z M214.788,225.593c-11.805-11.805-18.306-27.5-18.306-44.194   c0-3.396,0.283-6.747,0.811-10.036l71.725,71.725c-3.289,0.528-6.64,0.811-10.036,0.811   C242.288,243.899,226.593,237.397,214.788,225.593z M214.788,137.204c12.185-12.184,28.189-18.276,44.194-18.276   s32.01,6.092,44.193,18.276c11.806,11.805,18.307,27.5,18.307,44.194s-6.501,32.39-18.307,44.194   c-5.276,5.276-11.333,9.484-17.905,12.534l-83.017-83.017C205.304,148.537,209.512,142.48,214.788,137.204z M204.182,236.199   c8.337,8.337,18.243,14.533,29.047,18.329l-94.455,94.455l-47.376-47.376l94.455-94.456   C189.649,217.956,195.844,227.862,204.182,236.199z">
-								</path>
-								<path
-									d="M71.404,156.771c3.832,0,7.727-0.683,11.515-2.124c8.114-3.085,14.542-9.146,18.097-17.065s3.815-16.75,0.729-24.864   L74.201,40.279l60.756-23.103l17.82,46.862c-5.879-1.236-12.163-0.87-18.183,1.419c-16.75,6.37-25.195,25.179-18.826,41.93   c4.929,12.961,17.306,20.95,30.414,20.95c3.832,0,7.727-0.683,11.515-2.124c8.114-3.085,14.542-9.146,18.097-17.065   s3.815-16.75,0.729-24.864l-30.211-79.45c-0.707-1.859-2.124-3.362-3.938-4.176s-3.879-0.875-5.738-0.168L61.859,28.924   c-3.872,1.472-5.817,5.804-4.345,9.676L78,92.472c-5.879-1.236-12.163-0.869-18.183,1.419c-16.75,6.37-25.195,25.179-18.826,41.93   C45.919,148.782,58.296,156.771,71.404,156.771z M162.109,103.004c-1.915,4.264-5.375,7.528-9.745,9.189   c-9.021,3.428-19.147-1.118-22.578-10.137c-3.429-9.02,1.118-19.148,10.137-22.578c2.041-0.776,4.137-1.144,6.201-1.144   c7.058,0,13.723,4.302,16.377,11.281C164.163,93.985,164.024,98.739,162.109,103.004z M65.148,107.912   c2.041-0.776,4.137-1.144,6.201-1.144c7.058,0,13.723,4.302,16.377,11.281c1.661,4.37,1.522,9.124-0.393,13.389   c-1.915,4.264-5.375,7.528-9.745,9.189c-9.021,3.429-19.147-1.118-22.578-10.137C51.582,121.47,56.129,111.342,65.148,107.912z">
-								</path>
-							</svg>
 						</div>
 
 					</div>
@@ -901,9 +956,9 @@
 			//주소로 좌표를 검색합니다
 
 			var addrinput = '${ item.site_addr_rd}'
-			//if(addrinput == '    ') {
-			//	addrinput ='${ item.site_addr}';
-			//}
+			if (addrinput == '    ') {
+				addrinput = '${ item.site_addr}';
+			}
 			console.log(addrinput);
 			geocoder
 				.addressSearch(
@@ -971,25 +1026,78 @@
 	</div> --%>
 
 
-	<script src="<c:url value=" /resources/js/jquery.min.js" />"></script>
-	<script src="<c:url value=" /resources/js/jquery-migrate-3.0.1.min.js" />"></script>
-	<script src="<c:url value=" /resources/js/popper.min.js" />"></script>
-	<script src="<c:url value=" /resources/js/bootstrap.min.js" />"></script>
-	<script src="<c:url value=" /resources/js/jquery.easing.1.3.js" />"></script>
-	<script src="<c:url value=" /resources/js/jquery.waypoints.min.js" />"></script>
-	<script src="<c:url value=" /resources/js/jquery.stellar.min.js" />"></script>
-	<script src="<c:url value=" /resources/js/owl.carousel.min.js" />"></script>
-	<script src="<c:url value=" /resources/js/jquery.magnific-popup.min.js" />"></script>
-	<script src="<c:url value=" /resources/js/aos.js" />"></script>
+	<script src="<c:url value="/resources/js/jquery.min.js" />"></script>
+	<script src="<c:url value="/resources/js/jquery-migrate-3.0.1.min.js" />"></script>
+	<script src="<c:url value="/resources/js/popper.min.js" />"></script>
+	<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+	<script src="<c:url value="/resources/js/jquery.easing.1.3.js" />"></script>
+	<script src="<c:url value="/resources/js/jquery.waypoints.min.js" />"></script>
+	<script src="<c:url value="/resources/js/jquery.stellar.min.js" />"></script>
+	<script src="<c:url value="/resources/js/owl.carousel.min.js" />"></script>
+	<script src="<c:url value="/resources/js/jquery.magnific-popup.min.js" />"></script>
+	<script src="<c:url value="/resources/js/aos.js" />"></script>
 
-	<script src="<c:url value=" /resources/js/nouislider.min.js" />"></script>
-	<script src="<c:url value=" /resources/js/moment-with-locales.min.js" />"></script>
-	<script src="<c:url value=" /resources/js/bootstrap-datetimepicker.min.js" />"></script>
-	<script src="<c:url value=" /resources/js/main.js" />"></script>
+	<script src="<c:url value="/resources/js/nouislider.min.js" />"></script>
+	<script src="<c:url value="/resources/js/moment-with-locales.min.js" />"></script>
+	<script src="<c:url value="/resources/js/bootstrap-datetimepicker.min.js" />"></script>
+	<script src="<c:url value="/resources/js/main.js" />"></script>
+
+	
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
 	<!-- 테이블환경 -->
 	<script>
 
+		$(function () { //화면 다 뜨면 시작
+			$("#name").autocomplete({
+				source: function (request, response) {
+					var value = $('#name').val()
+					$.ajax({
+						type: 'get',
+						url: "simularsearch?keyword=" + value,
+						dataType: "json",
+						//data: {"param":"param"},
+						success: function (data) {
+							//서버에서 json 데이터 response 후 목록에 추가
+							response($.map(data, function (item) { //json[i] 번째 에 있는게 item 임.
+								console.log(item)
+								return {
+									label: item,
+									value: item
+								}
+							}));
+						}
+					});
+				}, // source 는 자동 완성 대상
+				select: function (event, ui) { //아이템 선택시
+					console.log(ui);//사용자가 오토컴플릿이 만들어준 목록에서 선택을 하면 반환되는 객체
+					console.log(ui.item.label); //김치 볶음밥label
+					console.log(ui.item.value); //김치 볶음밥
+					console.log(ui.item.test); //김치 볶음밥test
+
+				},
+				focus: function (event, ui) { //포커스 가면
+					return false;//한글 에러 잡기용도로 사용됨
+				},
+				minLength: 2,// 최소 글자수
+				autoFocus: true, //첫번째 항목 자동 포커스 기본값 false
+				classes: { //잘 모르겠음
+					"ui-autocomplete": "highlight"
+				},
+				delay: 500, //검색창에 글자 써지고 나서 autocomplete 창 뜰 때 까지 딜레이 시간(ms)
+				//	            disabled: true, //자동완성 기능 끄기
+				position: {
+					my: "right top",
+					at: "right bottom"
+				}, //잘 모르겠음
+				close: function (event) { //자동완성창 닫아질때 호출
+					console.log(event);
+				}
+			});
+
+		});
 	</script>
 
 

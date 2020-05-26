@@ -44,8 +44,8 @@
   background: #333;
 } */
 		.centered {
-			width: 550px;
-			height: 110px;
+			width: 550px;			/* 550 */
+			height: 110px;			/* 110 */
 			margin: auto;
 			position: absolute;
 			top: 0;
@@ -58,11 +58,11 @@
 			width: 100%;
 			height: 110px;
 			overflow: hidden;
-			position: relative;
+			position: static;		/* relative */
 		}
 
 		label {
-			position: absolute;
+			position: absolute;		/* absolute */
 			top: 36.6666666667px;
 			color: gray;
 			/* color: rgba(255, 255, 255, 0.5); */
@@ -131,6 +131,123 @@
 		::selection {
 			background: rgba(33, 150, 243, 0.3);
 		}
+		
+		
+		/* 추가한 부분 */
+
+/** Custom Select **/
+/* 
+.center {
+	
+}
+
+.custom-select-wrapper {
+  position: relative;
+  display: inline-block;
+  user-select: none;
+}
+  .custom-select-wrapper select {
+    display: none;
+  }
+  .custom-select {
+    position: relative;
+    display: inline-block;
+  }
+    .custom-select-trigger {
+      position: relative;
+      display: block;
+      width: 130px;
+      padding: 0 84px 0 22px;
+      font-size: 22px;
+      font-weight: 300;
+      color: #fff;
+      line-height: 60px;
+      background: #5c9cd8;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+      .custom-select-trigger:after {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 10px; height: 10px;
+        top: 50%; right: 25px;
+        margin-top: -3px;
+        border-bottom: 1px solid #fff;
+        border-right: 1px solid #fff;
+        transform: rotate(45deg) translateY(-50%);
+        transition: all .4s ease-in-out;
+        transform-origin: 50% 0;
+      }
+      .custom-select.opened .custom-select-trigger:after {
+        margin-top: 3px;
+        transform: rotate(-135deg) translateY(-50%);
+      }
+  .custom-options {
+    position: absolute;
+    display: block;
+    top: 100%; left: 0; right: 0;
+    min-width: 100%;
+    margin: 15px 0;
+    border: 1px solid #b5b5b5;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 1px rgba(0,0,0,.07);
+    background: #fff;
+    transition: all .4s ease-in-out;
+    
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-15px);
+  }
+  .custom-select.opened .custom-options {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+    .custom-options:before {
+      position: absolute;
+      display: block;
+      content: '';
+      bottom: 100%; right: 25px;
+      width: 7px; height: 7px;
+      margin-bottom: -4px;
+      border-top: 1px solid #b5b5b5;
+      border-left: 1px solid #b5b5b5;
+      background: #fff;
+      transform: rotate(45deg);
+      transition: all .4s ease-in-out;
+    }
+    .option-hover:before {
+      background: #f9f9f9;
+    }
+    .custom-option {
+      position: relative;
+      display: block;
+      padding: 0 22px;
+      border-bottom: 1px solid #b5b5b5;
+      font-size: 18px;
+      font-weight: 600;
+      color: #b5b5b5;
+      line-height: 47px;
+      cursor: pointer;
+      transition: all .4s ease-in-out;
+    }
+    .custom-option:first-of-type {
+      border-radius: 4px 4px 0 0;
+    }
+    .custom-option:last-of-type {
+      border-bottom: 0;
+      border-radius: 0 0 4px 4px;
+    }
+    .custom-option:hover,
+    .custom-option.selection {
+      background: #f9f9f9;
+    } */
+		
+		
 	</style>
 
 </head>
@@ -185,20 +302,32 @@
 		<section class="hero-wrap js-fullheight">
 			<div class="container">
 				<div class="row description js-fullheight align-items-center justify-content-center">
+										
 
 					<div class="centered">
+
 						<div class="group">
 							<form action="search" method="GET">
-								<select name="openstatus">
-									<option value="open">영업중</option>
-									<option value="closed">폐업</option>
-									<option value="all">모두</option>
-								</select>
+
+							
+ 			<!-- 추가한 부분 -->
+<!-- <div class="center">
+  <select name="sources" id="sources" class="custom-select sources" placeholder="전체">
+    <option value="profile">전 체</option>
+    <option value="word">영업중</option>
+    <option value="hashtag">폐 업</option>
+  </select>
+</div> -->
+							
+
 								<input id="name" name="keyword" type="text" required="required" /> <label
 									for="name">업소명을 입력해주세요.</label>
 								<div class="bar"></div>
 							</form>
 						</div>
+						
+
+						
 					</div>
 
 					<!-- <div class="col-md-8 text-center">
@@ -242,21 +371,21 @@
 	</div>
 
 
-	<script src="<c:url value=" /resources/js/jquery.min.js" />"></script>
-	<script src="<c:url value=" /resources/js/jquery-migrate-3.0.1.min.js" />"></script>
-	<script src="<c:url value=" /resources/js/popper.min.js" />"></script>
-	<script src="<c:url value=" /resources/js/bootstrap.min.js" />"></script>
-	<script src="<c:url value=" /resources/js/jquery.easing.1.3.js" />"></script>
-	<script src="<c:url value=" /resources/js/jquery.waypoints.min.js" />"></script>
-	<script src="<c:url value=" /resources/js/jquery.stellar.min.js" />"></script>
-	<script src="<c:url value=" /resources/js/owl.carousel.min.js" />"></script>
-	<script src="<c:url value=" /resources/js/jquery.magnific-popup.min.js" />"></script>
-	<script src="<c:url value=" /resources/js/aos.js" />"></script>
+	<script src="<c:url value="/resources/js/jquery.min.js" />"></script>
+	<script src="<c:url value="/resources/js/jquery-migrate-3.0.1.min.js" />"></script>
+	<script src="<c:url value="/resources/js/popper.min.js" />"></script>
+	<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+	<script src="<c:url value="/resources/js/jquery.easing.1.3.js" />"></script>
+	<script src="<c:url value="/resources/js/jquery.waypoints.min.js" />"></script>
+	<script src="<c:url value="/resources/js/jquery.stellar.min.js" />"></script>
+	<script src="<c:url value="/resources/js/owl.carousel.min.js" />"></script>
+	<script src="<c:url value="/resources/js/jquery.magnific-popup.min.js" />"></script>
+	<script src="<c:url value="/resources/js/aos.js" />"></script>
 
-	<script src="<c:url value=" /resources/js/nouislider.min.js" />"></script>
-	<script src="<c:url value=" /resources/js/moment-with-locales.min.js" />"></script>
-	<script src="<c:url value=" /resources/js/bootstrap-datetimepicker.min.js" />"></script>
-	<script src="<c:url value=" /resources/js/main.js" />"></script>
+	<script src="<c:url value="/resources/js/nouislider.min.js" />"></script>
+	<script src="<c:url value="/resources/js/moment-with-locales.min.js" />"></script>
+	<script src="<c:url value="/resources/js/bootstrap-datetimepicker.min.js" />"></script>
+	<script src="<c:url value="/resources/js/main.js" />"></script>
 
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

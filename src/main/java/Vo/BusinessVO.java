@@ -3,15 +3,17 @@ package Vo;
 public class BusinessVO {
 
 
-    private int cgg_code;			//�떆援곌뎄肄붾뱶
-    private int snt_cob_code;		//�뾽醫� 肄붾뱶
-    private int yy;					//�뀈�룄
-    private String upso_sno;		//�뾽�냼�씪�젴踰덊샇
-    private String snt_cob_nm;		//�뾽醫낅챸
-    private int perm_nt_ymd;		//�뿀媛��떊怨좎씪
-    private String upso_nm ;		//�뾽�냼紐�
-    private String site_addr;		//�냼�옱吏�吏�踰�
-    private String upso_site_telno;	//�냼�옱吏��쟾�솕踰덊샇
+    private int cgg_code;			//시군구코드
+    private int snt_cob_code;		//업종 코드
+    private int yy;					//년도
+    private String upso_sno;		//업소일련번호
+    private String snt_cob_nm;		//업종명
+    private int perm_nt_ymd;		//허가신고일
+    private String upso_nm ;		//업소명
+    private String site_addr_rd;	//도로명주소
+    private String site_addr;		//소재지지번
+    private String upso_site_telno;	//소재지전화번호
+
     private int bman_stdt;			//
     private String bup_nm;
     private int site_stdt;
