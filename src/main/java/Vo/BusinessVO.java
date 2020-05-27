@@ -13,7 +13,6 @@ public class BusinessVO {
     private String site_addr_rd;	//도로명주소
     private String site_addr;		//소재지지번
     private String upso_site_telno;	//소재지전화번호
-
     private String bup_nm;
     private int site_stdt;
     private String admdng_nm;
@@ -32,7 +31,7 @@ public class BusinessVO {
     private String perm_nt_cn;
     private int geoLat;
     private int geoLon;
-	private String site_addr_rd; 
+
     
 	public int getCgg_code() {
 		return cgg_code;

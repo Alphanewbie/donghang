@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page session="false"%>
+
 <html>
 <head>
 <title>우리동네 행정처분정보-동행</title>
@@ -205,14 +206,18 @@ div#carousel ~ span:hover { color: #888; cursor: pointer; }
 
 <!-- graph section -->
 <div id="carousel">
-  <figure id="spinner">
-    <img src="resources/images/analimg1.jpg" alt="파이그래프">				<!-- 이미지 크기는 450x450이 적당해 보임 -->
+<!-- 
+    <figure id="spinner">
+    <img src="resources/images/analimg1.jpg" alt="파이그래프">				
     <img src="resources/images/analimg2.png" alt>
     <img src="resources/images/analimg3.png" alt>
     <img src="resources/images/analimg4.jpg" alt>
     <img src="resources/images/analimg5.png" alt>
-    <img src="resources/images/analimg6.jpg" alt>
+     -->
+    <iframe src="resources/analview/analtest1.html"style="width : 800px; height: 1000px">
+    <!-- 
   </figure>
+   -->
 </div>
 <span style="float:left" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
 <span style="float:right" class="ss-icon" onclick="galleryspin('')">&gt;</span>
