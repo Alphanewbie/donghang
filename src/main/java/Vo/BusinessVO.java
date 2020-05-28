@@ -8,15 +8,15 @@ public class BusinessVO {
     private int yy;					//년도
     private String upso_sno;		//업소일련번호
     private String snt_cob_nm;		//업종명
-    private int perm_nt_ymd;		//허가신고일
+    private String perm_nt_ymd;		//허가신고일
     private String upso_nm ;		//업소명
     private String site_addr_rd;	//도로명주소
     private String site_addr;		//소재지지번
     private String upso_site_telno;	//소재지전화번호
     private String bup_nm;
-    private int site_stdt;
+    private String site_stdt;
     private String admdng_nm;
-    private int dcb_ymd ;
+    private String dcb_ymd ;
     private String dcb_gbn_nm;
     private String dcb_why ;
     private String snt_uptae_nm;
@@ -24,8 +24,8 @@ public class BusinessVO {
     private String site_loc_gbn ;
     private float trdp_area_etc ;
     private String perm_nt_no ;
-    private int cn_perm_stdt ;
-    private int cn_perm_enddt;
+    private String cn_perm_stdt ;
+    private String cn_perm_enddt;
     private String cn_perm_nt_sayu ;
 //    private String pern_nt_cn ;
     private String perm_nt_cn;
@@ -63,10 +63,10 @@ public class BusinessVO {
 	public void setSnt_cob_nm(String snt_cob_nm) {
 		this.snt_cob_nm = snt_cob_nm;
 	}
-	public int getPerm_nt_ymd() {
+	public String getPerm_nt_ymd() {
 		return perm_nt_ymd;
 	}
-	public void setPerm_nt_ymd(int perm_nt_ymd) {
+	public void setPerm_nt_ymd(String perm_nt_ymd) {
 		this.perm_nt_ymd = perm_nt_ymd;
 	}
 	public String getUpso_nm() {
@@ -100,10 +100,10 @@ public class BusinessVO {
 	public void setBup_nm(String bup_nm) {
 		this.bup_nm = bup_nm;
 	}
-	public int getSite_stdt() {
+	public String getSite_stdt() {
 		return site_stdt;
 	}
-	public void setSite_stdt(int site_stdt) {
+	public void setSite_stdt(String site_stdt) {
 		this.site_stdt = site_stdt;
 	}
 	public String getAdmdng_nm() {
@@ -112,10 +112,10 @@ public class BusinessVO {
 	public void setAdmdng_nm(String admdng_nm) {
 		this.admdng_nm = admdng_nm;
 	}
-	public int getDcb_ymd() {
+	public String getDcb_ymd() {
 		return dcb_ymd;
 	}
-	public void setDcb_ymd(int dcb_ymd) {
+	public void setDcb_ymd(String dcb_ymd) {
 		this.dcb_ymd = dcb_ymd;
 	}
 	public String getDcb_gbn_nm() {
@@ -160,16 +160,16 @@ public class BusinessVO {
 	public void setPerm_nt_no(String perm_nt_no) {
 		this.perm_nt_no = perm_nt_no;
 	}
-	public int getCn_perm_stdt() {
+	public String getCn_perm_stdt() {
 		return cn_perm_stdt;
 	}
-	public void setCn_perm_stdt(int cn_perm_stdt) {
+	public void setCn_perm_stdt(String cn_perm_stdt) {
 		this.cn_perm_stdt = cn_perm_stdt;
 	}
-	public int getCn_perm_enddt() {
+	public String getCn_perm_enddt() {
 		return cn_perm_enddt;
 	}
-	public void setCn_perm_enddt(int cn_perm_enddt) {
+	public void setCn_perm_enddt(String cn_perm_enddt) {
 		this.cn_perm_enddt = cn_perm_enddt;
 	}
 	public String getCn_perm_nt_sayu() {
