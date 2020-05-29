@@ -69,6 +69,40 @@ box-shadow:0 1px 3px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.1) inset
 .bw button:hover {color:#fff;background-color:#353535;border-color:#353535}
 .blue .panel {/* max-width:960px */;text-align:center;position:relative;margin:auto;}
 
+/* iframe */
+
+.laptop {
+	box-sizing: border-box;
+	width: 900px;
+	max-width: 100%;
+	height: 550px;
+	margin: 0 auto;
+	border: 5px solid #fff;
+	border-radius: 10px;
+	overflow: hidden;
+	background-image: url(resources/images/notebook.jpg);
+}
+
+.screen-overlay {
+	width: 600px;
+	height: 500px;
+	background-color: #191919;
+
+	
+	transform: matrix3d(1.11008, 0.108202, 0, 0.000394192, 
+						0.224001, 0.803852, 0, -8.80428e-05, 
+						0, 0, 1, 0, 
+						40, 34, 0, 1);
+	transform-origin: 0 0 0;
+}
+
+.live-view {
+	width: 200%;
+	height: 200%;
+	transform: scale(0.5);
+	transform-origin: top left;
+}
+
 </style>
 
 </head>
@@ -100,9 +134,6 @@ box-shadow:0 1px 3px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.1) inset
 						<li class="nav-item"><a href="#"
 							class="nav-link icon d-flex align-items-center"><i
 								class="ion-ios-cloud-download mr-2"></i> Rest API</a></li>
-						<!--  <li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i class="ion-logo-facebook"></i></a></li>
-	          <li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i class="ion-logo-twitter"></i></a></li>
-	          <li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i class="ion-logo-instagram"></i></a></li> -->
 					</ul>
 				</div>
 			</div>
@@ -151,7 +182,12 @@ box-shadow:0 1px 3px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.1) inset
 	</div>
 	</div>
 
-
+<!-- iframe -->
+	<div class="laptop">
+		<div class="screen-overlay">
+			<iframe src="https://www.kreditjob.com/" class="live-view" sandbox="allow-scripts allow-same-origin allow-pointer-lock"></iframe>
+		</div>
+	</div>
 
 		</section>
 
@@ -164,7 +200,6 @@ box-shadow:0 1px 3px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.1) inset
 						document.write(new Date().getFullYear());
 					</script>
 					메인 페이지 제작중입니다. 세세한것 바꾸기 어렵네유
-					<!-- <i class="icon-heart" aria-hidden="true"></i> -->
 					by <a href="https://github.com/Sohottoday" target="_blank">성 연</a>
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 				</p>

@@ -103,8 +103,7 @@ figure#spinner img:nth-child(6){ transform: rotateY(-225deg); }
 figure#spinner img:nth-child(7){ transform: rotateY(-270deg); }
 figure#spinner img:nth-child(8){ transform: rotateY(-315deg); } */
 
-figure#spinner img:nth-child(1) { transform:rotateY(0deg); 
-}
+figure#spinner img:nth-child(1) { transform:rotateY(0deg); }
 figure#spinner img:nth-child(2) { transform: rotateY(-60deg); }
 figure#spinner img:nth-child(3) { transform: rotateY(-120deg); }
 figure#spinner img:nth-child(4) { transform: rotateY(-180deg); }
@@ -206,18 +205,17 @@ div#carousel ~ span:hover { color: #888; cursor: pointer; }
 
 <!-- graph section -->
 <div id="carousel">
-<!-- 
+
     <figure id="spinner">
     <img src="resources/images/analimg1.jpg" alt="파이그래프">				
     <img src="resources/images/analimg2.png" alt>
     <img src="resources/images/analimg3.png" alt>
     <img src="resources/images/analimg4.jpg" alt>
     <img src="resources/images/analimg5.png" alt>
-     -->
-    <iframe src="resources/analview/analtest1.html"style="width : 800px; height: 1000px">
-    <!-- 
+
+  
   </figure>
-   -->
+
 </div>
 <span style="float:left" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
 <span style="float:right" class="ss-icon" onclick="galleryspin('')">&gt;</span>
