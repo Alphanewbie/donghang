@@ -55,4 +55,10 @@ public class HomeController {
 		return "content2";
 	}
 	
+	@RequestMapping(value = "/data3", method = RequestMethod.GET)
+	public String dataAnal3(Locale locale, Model model) {
+				
+				
+		return "data3";
+	}
 }
