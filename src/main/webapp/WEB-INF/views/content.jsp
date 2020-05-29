@@ -608,8 +608,13 @@
   width: 100%;
   position: relative;
   display: flex;
+  margin-top : 25px;
 }
-
+#searchform{
+	width : 100%;
+	position:relative;
+	display: flex;
+}
 .searchTerm {
   width: 100%;
   border: 3px solid #00B4CC;
@@ -672,10 +677,13 @@
 				<!-- 12시 방향 검색 창 -->
 					<div class="wrap">
 						<div class="search">
-							<input type="text" id="name" class="searchTerm" placeholder="업소명을 입력해주세요.">
+						
+						<form action="search" method="GET" id="searchform">
+							<input type="text" id="name" name="keyword" class="searchTerm" placeholder="업소명을 입력해주세요.">
 							<button type="submit" class="searchButton">
 								<!-- <i class="fa fa-search"></i> -->검색
 							</button>
+						</form>
 						</div>
 					</div>
 
