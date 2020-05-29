@@ -207,11 +207,10 @@ div#carousel ~ span:hover { color: #888; cursor: pointer; }
 <div id="carousel">
 
     <figure id="spinner">
-    <img src="resources/images/analimg1.jpg" alt="파이그래프">				
-    <img src="resources/images/analimg2.png" alt>
-    <img src="resources/images/analimg3.png" alt>
-    <img src="resources/images/analimg4.jpg" alt>
-    <img src="resources/images/analimg5.png" alt>
+    <img src="resources/images/guUPTAEpunishuptaepie.png" alt="파이그래프">				
+    <img src="resources/images/guUPTAE.png" alt>
+    <img src="resources/images/gupunishtemp.png" alt>
+    <img src="resources/images/gucobGraph.png" alt>
 
   
   </figure>

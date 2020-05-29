@@ -185,7 +185,7 @@ box-shadow:0 1px 3px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.1) inset
 <!-- iframe -->
 	<div class="laptop">
 		<div class="screen-overlay">
-			<iframe src="https://www.kreditjob.com/" class="live-view" sandbox="allow-scripts allow-same-origin allow-pointer-lock"></iframe>
+			<iframe src="resources/analview/gucobresult.html" class="live-view" sandbox="allow-scripts allow-same-origin allow-pointer-lock"></iframe>
 		</div>
 	</div>
 
