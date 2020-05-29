@@ -1,8 +1,8 @@
 package Vo;
 
 public class SearchVO {
-    private String upso_nm; //�뾽醫낅챸
-    private String site_addr; // �냼�옱吏�吏�踰�
+    private String upso_nm;
+    private String site_addr;
 
     public SearchVO() {}
 
