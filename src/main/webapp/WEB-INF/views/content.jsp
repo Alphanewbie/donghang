@@ -796,7 +796,9 @@
 
 						<div class="notes">
 							<span>워드클라우드</span>
-							<div class="notes__list"><img src="resources/images/test3.png" id="wordcloud"></div>
+
+							<div class="notes__list"><img src="resources/wordcloud/${item.perm_nt_no}.png" id="wordcloud"></div>
+	
 						</div>
 						<div class="expenses">
 							<h4>기타 정보</h4>
@@ -813,7 +815,8 @@
 									punishlist[0]. dispo_ctn }</span>
 							</div>
 							<div class="expenses__box">
-								<span class="expenses__title">[처분기간]</span><span class="expenses__amount">2</span>
+								<span class="expenses__title">[처분기간]</span><span class="expenses__amount">${
+									punishlist[0]. dispo_ctn_dt}</span>
 							</div>
 
 							<div class="savings">

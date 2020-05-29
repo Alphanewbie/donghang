@@ -28,7 +28,7 @@ public class BusinessVO {
     private int cn_perm_enddt;
     private String cn_perm_nt_sayu ;
 //    private String pern_nt_cn ;
-    private String perm_nt_cn;
+//    private String perm_nt_cn;
     private int geoLat;
     private int geoLon;
 
@@ -184,12 +184,12 @@ public class BusinessVO {
 //	public void setPern_nt_cn(String pern_nt_cn) {
 //		this.pern_nt_cn = pern_nt_cn;
 //	}
-	public String getPerm_nt_cn() {
-		return perm_nt_cn;
-	}
-	public void setPerm_nt_cn(String perm_nt_cn) {
-		this.perm_nt_cn = perm_nt_cn;
-	}
+//	public String getPerm_nt_cn() {
+//		return perm_nt_cn;
+//	}
+//	public void setPerm_nt_cn(String perm_nt_cn) {
+//		this.perm_nt_cn = perm_nt_cn;
+//	}
 	public int getGeoLat() {
 		return geoLat;
 	}

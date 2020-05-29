@@ -34,7 +34,7 @@ public class upsoDAO {
 
         List<BusinessVO> list = new ArrayList<BusinessVO>();
         String statement = "resource.UpsoMapper.searchUpso";
-        // System.out.print(keyword.getUpso_nm()+"/ happy /" + keyword.getSite_addr());
+         System.out.print(keyword.getUpso_nm()+"/ happy /" + keyword.getSite_addr());
         list = session.selectList(statement, keyword);
         int length = list.size();
         if (length <= 0)
