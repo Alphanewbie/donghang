@@ -207,15 +207,29 @@ div#carousel ~ span:hover { color: #888; cursor: pointer; }
 <div id="carousel">
 
     <figure id="spinner">
-    <img src="resources/images/guUPTAEpunishuptaepie.png" alt="파이그래프">				
-    <img src="resources/images/guUPTAE.png" alt>
-    <img src="resources/images/gupunishtemp.png" alt>
-    <img src="resources/images/gucobGraph.png" alt>
-
+    <img src="resources/images/gu_upso.png"  style="width : 120%; height : 120%">				
+    <img src="resources/images/gu_upcob.png" alt>
+    <img src="resources/images/gu_upsopunish.png" alt>
+    <img src="resources/images/gucurrupso.png" alt>
+	<img src="resources/images/gukeptvia.png" alt>
   
   </figure>
 
 </div>
+
+<iframe src="resources/analview/gucobresult.html" title="W3Schools Free Online Web Tutorials" style="width : 800px; height : 500px">
+</iframe>
+<iframe src="resources/analview/gu_upcob.html" title="W3Schools Free Online Web Tutorials" style="width : 800px; height : 500px">
+</iframe>
+<iframe src="resources/analview/gu_upcob.html" title="W3Schools Free Online Web Tutorials" style="width : 800px; height : 500px">
+</iframe>
+<iframe src="resources/analview/gucurrupso.html" title="W3Schools Free Online Web Tutorials" style="width : 800px; height : 500px">
+</iframe>
+<!-- 
+<iframe src="resources/analview/gucurrupso.html" title="W3Schools Free Online Web Tutorials" style="width : 800px; height : 500px">
+</iframe>
+
+ -->
 <span style="float:left" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
 <span style="float:right" class="ss-icon" onclick="galleryspin('')">&gt;</span>
 <script>
