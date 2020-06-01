@@ -57,7 +57,17 @@ public class SearchContoller {
 			return mav;
 		}
 		else {
-			mav.setViewName("home");
+			mav.addObject("item", list.get(0));
+			System.out.print(list.get(0).getSite_addr_rd());
+			search = test.getSite_addr().split("  ",2);
+			test.setSite_addr(search[0]);
+			List<DispositionVo> punishlist = punish.punishSearch(test);
+//			for (int i=0;i<punishlist.size();i++) {
+//				System.out.println("Dev : "+punishlist.get(i).getBas_law());
+//			}
+			mav.addObject("punishlist", punishlist);
+//			mav.addObject("punish", new)
+			mav.setViewName("content");
 			return mav;
 		}
 	}
