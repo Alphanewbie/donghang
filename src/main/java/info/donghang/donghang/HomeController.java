@@ -17,7 +17,6 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 
-		System.out.println("�ù�");
 		return "home";
 	}
 	
@@ -32,33 +31,36 @@ public class HomeController {
 	public String analysis(Locale locale, Model model) {
 				
 				
-		return "ana1";
+		return "analysis";
 	}
 	
 	@RequestMapping(value = "/data", method = RequestMethod.GET)
 	public String dataAnal(Locale locale, Model model) {
-				
-				
+							
 		return "data";
 	}
 	
-	@RequestMapping(value = "/data2", method = RequestMethod.GET)
-	public String dataAnal2(Locale locale, Model model) {
-				
-				
-		return "data2";
-	}
-	@RequestMapping(value = "/content2", method = RequestMethod.GET)
-	public String content2(Locale locale, Model model) {
-				
-				
-		return "content2";
+	@RequestMapping(value = "/restAPI", method = RequestMethod.GET)
+	public String restAPI(Locale locale, Model model) {
+							
+		return "RestAPI";
 	}
 	
-	@RequestMapping(value = "/data3", method = RequestMethod.GET)
-	public String dataAnal3(Locale locale, Model model) {
-				
-				
-		return "data3";
-	}
+	/*
+	 * @RequestMapping(value = "/data2", method = RequestMethod.GET) public String
+	 * dataAnal2(Locale locale, Model model) {
+	 * 
+	 * return "data2"; }
+	 * 
+	 * @RequestMapping(value = "/content2", method = RequestMethod.GET) public
+	 * String content2(Locale locale, Model model) {
+	 * 
+	 * return "content2"; }
+	 * 
+	 * @RequestMapping(value = "/data3", method = RequestMethod.GET) public String
+	 * dataAnal3(Locale locale, Model model) {
+	 * 
+	 * return "data3"; }
+	 */
+
 }

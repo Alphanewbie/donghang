@@ -121,37 +121,106 @@ div#carousel ~ span {
   border-bottom: none; 
   line-height: 0; }
 div#carousel ~ span:hover { color: #888; cursor: pointer; }
+
+/* 검색 메뉴 추가 */
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+  margin-top : 25px;
+}
+#searchform{
+	width : 100%;
+	position:relative;
+	display: flex;
+}
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 50px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 50px;	/* 40 */
+  height: 50px;		/* 36 */
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#wordcloud {
+	width : 100%;
+	height : 85%
+}
+.wrap {
+	width: 30%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+		}
 </style>
 
 </head>
 <body>
 	<div class="main-section">
-		<nav
-			class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
-			id="ftco-navbar">
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 			<div class="container">
 				<a class="navbar-brand" href="http://localhost:8000/donghang">DongHang</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse"
-					data-target="#ftco-nav" aria-controls="ftco-nav"
-					aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+					aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="oi oi-menu"></span> Menu
 				</button>
 				<div class="collapse navbar-collapse" id="ftco-nav">
+				<!-- 12시 방향 검색 창 -->
+					<div class="wrap">
+						<div class="search">
+						
+						<form action="search" method="GET" id="searchform">
+							<input type="text" id="name" name="keyword" class="searchTerm" placeholder="업소명을 입력해주세요.">
+							<button type="submit" class="searchButton">
+								<!-- <i class="fa fa-search"></i> -->검색
+							</button>
+						</form>
+						</div>
+					</div>
+
 					<ul class="navbar-nav ml-auto">
 						<li class="dropdown nav-item"><a href="#"
-							class="dropdown-toggle nav-link icon d-flex align-items-center"
-							data-toggle="dropdown"> <i class="ion-ios-apps mr-2"></i> 분 석
+								class="dropdown-toggle nav-link icon d-flex align-items-center" data-toggle="dropdown">
+								<i class="ion-ios-apps mr-2"></i> 분 석
 								<b class="caret"></b>
-						</a>
+							</a>
 							<div class="dropdown-menu dropdown-menu-left">
 								<a href="http://localhost:8000/donghang/analysis" class="dropdown-item"><i
-									class="ion-ios-apps mr-2"></i> 기본 분석 </a> <a href="http://localhost:8000/donghang/data"
-									class="dropdown-item"><i class="ion-ios-document mr-2"></i>
-									데이터 분석 </a>
-							</div></li>
-						<li class="nav-item"><a href="#"
-							class="nav-link icon d-flex align-items-center"><i
-								class="ion-ios-cloud-download mr-2"></i> Rest API</a></li>
+										class="ion-ios-apps mr-2"></i> 기본 분석 </a> <a
+									href="http://localhost:8000/donghang/data" class="dropdown-item"><i
+										class="ion-ios-document mr-2"></i>데이터 분석 </a>
+							</div>
+
+						</li>
+						<li class="nav-item"><a href="http://localhost:8000/donghang/restAPI" class="nav-link icon d-flex align-items-center"><i
+									class="ion-ios-cloud-download mr-2"></i> Rest API</a></li>
 						<!--  <li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i class="ion-logo-facebook"></i></a></li>
 	          <li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i class="ion-logo-twitter"></i></a></li>
 	          <li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i class="ion-logo-instagram"></i></a></li> -->
@@ -232,15 +301,13 @@ spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-t
 		<footer class="ftco-section ftco-section-2">
 			<div class="col-md-12 text-center">
 				<p class="mb-0">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					Copyright &copy;
 					<script>
 						document.write(new Date().getFullYear());
 					</script>
-					메인 페이지 제작중입니다. 세세한것 바꾸기 어렵네유
+					ⓒ All Rights Reserved
 					<!-- <i class="icon-heart" aria-hidden="true"></i> -->
-					by <a href="https://github.com/Sohottoday" target="_blank">성 연</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					by <a href="https://github.com/Alphanewbie/donghang" target="_blank">Team DongHang</a>
 				</p>
 			</div>
 		</footer>

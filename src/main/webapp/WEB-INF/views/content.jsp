@@ -701,7 +701,7 @@
 							</div>
 
 						</li>
-						<li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i
+						<li class="nav-item"><a href="http://localhost:8000/donghang/restAPI" class="nav-link icon d-flex align-items-center"><i
 									class="ion-ios-cloud-download mr-2"></i> Rest API</a></li>
 						<!--  <li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i class="ion-logo-facebook"></i></a></li>
 	          <li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i class="ion-logo-twitter"></i></a></li>
@@ -844,7 +844,7 @@
 										<c:choose>
 											<c:when test="${empty item.dcb_gbn_nm }">
 												<div class="goals__item__desc">상태 : 정상 영업</div>
-												<!--<div class="goals__item">
+												<div class="goals__item">
 													<div class="goals__item__checkbox"></div>
 													<div class="goals__item__desc">폐업 일자 :
 														${item.dcb_ymd}</div>
@@ -855,7 +855,7 @@
 														<div class="goals__item__checkbox"></div>
 														<div class="goals__item__desc">폐업 사유 : ${item.dcb_why}</div>
 													</div>
-												-->
+												
 											</c:when>
 
 											<c:otherwise>
@@ -942,10 +942,9 @@
 					<script>
 						document.write(new Date().getFullYear());
 					</script>
-					메인 페이지 제작중입니다. 세세한것 바꾸기 어렵네유
+					ⓒ All Rights Reserved
 					<!-- <i class="icon-heart" aria-hidden="true"></i> -->
-					by <a href="https://github.com/Sohottoday" target="_blank">성 연</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					by <a href="https://github.com/Alphanewbie/donghang" target="_blank">Team DongHang</a>
 				</p>
 			</div>
 		</footer>

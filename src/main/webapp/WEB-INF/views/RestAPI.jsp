@@ -5,111 +5,26 @@
 <head>
 <title>우리동네 행정처분정보-동행</title>
 <meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport"	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link
-	href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap"
-	rel="stylesheet" type="text/css">
-
-<link href="https://fonts.googleapis.com/css?family=Prata&display=swap"
-	rel="stylesheet" type="text/css">
-
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/open-iconic-bootstrap.min.css"
-	type="text/css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/animate.css"
-	type="text/css">
-
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/owl.carousel.min.css"
-	type="text/css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/owl.theme.default.min.css"
-	type="text/css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/magnific-popup.css"
-	type="text/css">
-
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/aos.css"
-	type="text/css">
-
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/ionicons.min.css"
-	type="text/css">
-
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/bootstrap-datetimepicker.min.css"
-	type="text/css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/nouislider.css"
-	type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap"	rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Prata&display=swap"	rel="stylesheet" type="text/css">
+<link rel="stylesheet"	href="${pageContext.request.contextPath}/resources/css/open-iconic-bootstrap.min.css"	type="text/css">
+<link rel="stylesheet"	href="${pageContext.request.contextPath}/resources/css/animate.css"	type="text/css">
+<link rel="stylesheet"	href="${pageContext.request.contextPath}/resources/css/owl.carousel.min.css"	type="text/css">
+<link rel="stylesheet"	href="${pageContext.request.contextPath}/resources/css/owl.theme.default.min.css"	type="text/css">
+<link rel="stylesheet"	href="${pageContext.request.contextPath}/resources/css/magnific-popup.css"	type="text/css">
+<link rel="stylesheet"	href="${pageContext.request.contextPath}/resources/css/aos.css"	type="text/css">
+<link rel="stylesheet"	href="${pageContext.request.contextPath}/resources/css/ionicons.min.css"	type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap-datetimepicker.min.css"	type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/nouislider.css" type="text/css">
+<link rel="stylesheet"	href="${pageContext.request.contextPath}/resources/css/flaticon.css"	type="text/css">
+<link rel="stylesheet"	href="${pageContext.request.contextPath}/resources/css/icomoon.css"	type="text/css">
+<link rel="stylesheet"	href="${pageContext.request.contextPath}/resources/css/style.css"	type="text/css">
+<link rel="stylesheet"	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/flaticon.css"
-	type="text/css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/icomoon.css"
-	type="text/css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/style.css"
-	type="text/css">
-<link rel="stylesheet"
-	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <style>
-
-h3 {
-  font-size: 1.5em;
-  font-weight: 100;
-  letter-spacing: 1em;
-  text-shadow: 0px 0px 20px #1abb9c;
-  color: white;
-  display: inline-block;
-}
-
-.container333 {
-  font-size: 16px;
-  top: 50%;
-  left: 35%;
-  position: absolute;
-  color: #FFFFFF;
-  text-align: center;
-}
-
-.bar {
-  height: .3em;
-  width: 30em;
-  border-radius: 10px;
-  background: transparent;
-  box-shadow: inset 0px 0px 8px #323232;
-  overflow: hidden;
-  padding: 5px;
-}
-
-.progress {
-  height: inherit;
-  border-radius: inherit;
-  width: 0;
-  background: white;
-  animation: load 3s linear infinite;
-  animation-delay: 2s;
-}
-
-@keyframes load {
-  0% {
-    width: 0%;
-  }
-  50% {
-    width: 100%;
-  }
-  100% {
-    width: 0%;
-    float: right;
-  }
-}
 
 /* 검색 메뉴 추가 */
 .search {
@@ -169,11 +84,66 @@ h3 {
 	transform: translate(-50%, -50%);
 		}
 
+/* coming soon */
+.container2 {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  min-width: 320px;
+  margin-left: 300px;
+}
+.container2 h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+.container2 h1 a {
+  display: inline-block;
+  background: #000;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 10px 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.container2 h1 a:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+.container2 p {
+  margin-bottom: 30px;
+  color: #d6f2e4;
+  font-family: 'Proxima Nova', sans-serif;
+  font-size: 20px;
+}
+.container2 .social-media ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.container2 .social-media ul li {
+  display: inline-block;
+  margin: 0 16px 0 0;
+  font-size: 14px;
+}
+.container2 .social-media ul li:last-child {
+  margin: 0;
+}
+.container2 .social-media ul li a {
+  display: block;
+  width: 16px;
+  color: #fff;
+}
+
 </style>
 
 </head>
 <body>
-
 	<div class="main-section">
 		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 			<div class="container">
@@ -223,16 +193,48 @@ h3 {
 
 		<section class="hero-wrap js-fullheight">
 
-		<!-- coming soon -->
-			<div class="container333">
-				<h3><strong>Data Analysis</strong><br><br> coming soon</h3>
-  					<div class="bar">
-    					<div class="progress"></div>
-  					</div>
-			</div>
+		<!-- Coming soon -->
+		<div class='container2'>
+			<h1>
+    			<a data-sr='scale up 10%' href='https://github.com/Alphanewbie/donghang'>Rest API</a>
+    			<span data-sr='top wait .3s 90px'>i</span>
+    			<span data-sr='top wait .4s 90px'>s</span>
+    			<span>&nbsp;</span>
+    			<span data-sr='top wait .5s 90px'>c</span>
+    			<span data-sr='top wait .6s 90px'>o</span>
+    			<span data-sr='top wait .7s 90px'>m</span>
+    			<span data-sr='top wait .8s 90px'>i</span>
+    			<span data-sr='top wait .9s 90px'>n</span>
+    			<span data-sr='top wait 1s 90px'>g</span>
+    			<span>&nbsp;</span>
+    			<span data-sr='top wait 1.1s 90px'>s</span>
+    			<span data-sr='top wait 1.2s 90px'>o</span>
+    			<span data-sr='top wait 1.3s 90px'>o</span>
+    			<span data-sr='top wait 1.4s 90px'>n</span>
+    			<span data-sr='top wait 1.5s 90px'>!</span>
+  			</h1>
+  			<p data-sr='bottom wait 1.5s 90px'>곧 업데이트 될 Rest API를 기대해 주세요.</p>
+		</div>
+<!-- <script>
+window.sr = new scrollReveal(config);
+
+var config = {
+  easing: 'ease',
+  reset: true
+}
+
+// Font Settings
+(function(d) {
+  var config = {
+    kitId: 'xyl8bgh',
+    scriptTimeout: 3000
+  },
+  h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+})(document);
+</script> -->
 
 		</section>
-	
+
 		<footer class="ftco-section ftco-section-2">
 			<div class="col-md-12 text-center">
 				<p class="mb-0">
@@ -247,15 +249,7 @@ h3 {
 				</p>
 			</div>
 		</footer>
-	</div>
 
-	<!-- loader -->
-	<div id="ftco-loader" class="show fullscreen">
-		<svg class="circular" width="48px" height="48px">
-			<circle class="path-bg" cx="24" cy="24" r="22" fill="none"
-				stroke-width="4" stroke="#eeeeee" />
-			<circle class="path" cx="24" cy="24" r="22" fill="none"
-				stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg>
 	</div>
 
 	<script src="<c:url value="/resources/js/jquery.min.js" />"></script>
@@ -267,7 +261,7 @@ h3 {
 	<script src="<c:url value="/resources/js/jquery.waypoints.min.js" />"></script>
 	<script src="<c:url value="/resources/js/jquery.stellar.min.js" />"></script>
 	<script src="<c:url value="/resources/js/owl.carousel.min.js" />"></script>
-	<script src="<c:url value="/resources/js/jquery.magnific-popup.min.js" />"></script>
+	<script	src="<c:url value="/resources/js/jquery.magnific-popup.min.js" />"></script>
 	<script src="<c:url value="/resources/js/aos.js" />"></script>
 
 	<script src="<c:url value="/resources/js/nouislider.min.js" />"></script>
@@ -321,7 +315,6 @@ h3 {
 					console.log(ui.item.label); //김치 볶음밥label
 					console.log(ui.item.value); //김치 볶음밥
 					console.log(ui.item.test); //김치 볶음밥test
-
 				},
 				focus : function(event, ui) { //포커스 가면
 					return false;//한글 에러 잡기용도로 사용됨
@@ -341,10 +334,7 @@ h3 {
 					console.log(event);
 				}
 			});
-
 		});
-		
 	</script>
-	
 </body>
 </html>

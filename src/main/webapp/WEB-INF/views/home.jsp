@@ -156,7 +156,7 @@ input:-webkit-autofill {
 									데이터 분석 </a>
 							</div>
 						</li>
-						<li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i
+						<li class="nav-item"><a href="http://localhost:8000/donghang/restAPI" class="nav-link icon d-flex align-items-center"><i
 									class="ion-ios-cloud-download mr-2"></i> Rest API</a></li>
 						<!--  <li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i class="ion-logo-facebook"></i></a></li>
 	          <li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i class="ion-logo-twitter"></i></a></li>
@@ -190,8 +190,8 @@ input:-webkit-autofill {
 					<script>
 						document.write(new Date().getFullYear());
 					</script>
-					메인 페이지 제작중입니다. 세세한것 바꾸기 어렵네유
-					by <a href="https://github.com/Sohottoday" target="_blank">성 연</a>
+					ⓒ All Rights Reserved
+					by <a href="https://github.com/Alphanewbie/donghang" target="_blank">Team DongHang</a>
 				</p>
 			</div>
 		</footer>
