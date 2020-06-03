@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
+	import="java.util.List,Vo.ClosedVO"%>
 
 <html>
 
@@ -297,6 +298,86 @@ figure#spinner img:nth-child(8){ transform: rotateY(-315deg); } */
 			color: #888;
 			cursor: pointer;
 		}
+
+		.table {
+			margin: 0 0 40px 0;
+			width: 100%;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+			display: table;
+		}
+
+		@media screen and (max-width: 580px) {
+			.table {
+				display: block;
+			}
+		}
+
+		.row {
+			display: table-row;
+			background: #f6f6f6;
+		}
+
+		.row:nth-of-type(odd) {
+			background: #e9e9e9;
+		}
+
+		.row.header {
+			font-weight: 900;
+			color: #ffffff;
+			background: #ea6153;
+		}
+
+		.row.green {
+			background: #27ae60;
+		}
+
+		.row.blue {
+			background: #2980b9;
+		}
+
+		@media screen and (max-width: 580px) {
+			.row {
+				padding: 14px 0 7px;
+				display: block;
+			}
+
+			.row.header {
+				padding: 0;
+				height: 6px;
+			}
+
+			.row.header .cell {
+				display: none;
+			}
+
+			.row .cell {
+				margin-bottom: 10px;
+			}
+
+			.row .cell:before {
+				margin-bottom: 3px;
+				content: attr(data-title);
+				min-width: 98px;
+				font-size: 10px;
+				line-height: 10px;
+				font-weight: bold;
+				text-transform: uppercase;
+				color: #969696;
+				display: block;
+			}
+		}
+
+		.cell {
+			padding: 6px 12px;
+			display: table-cell;
+		}
+
+		@media screen and (max-width: 580px) {
+			.cell {
+				padding: 2px 16px;
+				display: block;
+			}
+		}
 	</style>
 
 </head>
@@ -318,9 +399,8 @@ figure#spinner img:nth-child(8){ transform: rotateY(-315deg); } */
 								<b class="caret"></b>
 							</a>
 							<div class="dropdown-menu dropdown-menu-left">
-								<a href="/donghang/analysis" class="dropdown-item"><i
-										class="ion-ios-apps mr-2"></i> 기본 분석 </a> <a
-									href="/donghang/data" class="dropdown-item"><i
+								<a href="/donghang/analysis" class="dropdown-item"><i class="ion-ios-apps mr-2"></i> 기본
+									분석 </a> <a href="/donghang/data" class="dropdown-item"><i
 										class="ion-ios-document mr-2"></i>
 									데이터 분석 </a>
 							</div>
@@ -377,102 +457,115 @@ figure#spinner img:nth-child(8){ transform: rotateY(-315deg); } */
 				</div>
 			</div>
 
-			<!-- graph section -->
-			<div id="carousel">
+			<div style="overflow:auto; width:500px; height:700px; float: left;">
 
-				<figure id="spinner">
-					<img src="resources/images/gu_upso.png" >
-					<img src="resources/images/gu_upcob.png">
-					<img src="resources/images/gu_upsopunish.png">
-					<img src="resources/images/temper.png">
-					<img src="resources/images/gukeptvia.png">
-					<img src="resources/images/DISPO_CTN.png">
-				</figure>
+				<div class="table">
 
-				<span style="float:left; font-size: 60px;" class="ss-icon" onclick="galleryspin('-')" >&lt;</span>
-				<span style="float:right; font-size: 60px;" class="ss-icon" onclick="galleryspin('')">&gt;</span>
+					<div class="row header blue">
+						<div class="cell">
+							랭킹
+						</div>
+						<div class="cell">
+							주소
+						</div>
+						<div class="cell">
+							폐업율
+						</div>
+
+					</div>
+
+					<c:forEach var="item" items="${list}" varStatus="status">
+						<div class="row" onclick="panTo('${item.pos}')">
+							<div class="cell" data-title="Name">
+								${status.count}
+							</div>
+							<div class="cell" data-title="Age">
+								${item.pos}
+							</div>
+							<div class="cell" data-title="Age">
+								${item.rate}
+							</div>
+						</div>
+					</c:forEach>
+
+				</div>
+			</div>
+
+			<div id="map" style="width:60%;height:700px; float: right;">
+				<script type="text/javascript"
+					src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bc749fee6771e67cc8f77587a763513a&libraries=services">
+					</script>
+
 				<script>
-					var flamenum=0;
-					var angle = 0;
-					function galleryspin(sign) {
-						spinner = document.querySelector("#spinner");
-						flame = document.getElementById('iamflame');
-						if (!sign) { 
-							angle = angle + 60;
-							console.log(flamenum);
-							flamenum = (flamenum + 1) % 6;
-							console.log(flamenum);
-						} else { 
-							angle = angle - 60; 
-							console.log(flamenum);
-							flamenum = flamenum - 1;
-							
-							if(flamenum<0)
-							{
-								flamenum = 5;
-							}
-							console.log(flamenum);
-						}		/* +45 -45 */
-						console.log(flamenum);
-						if( flamenum == 0)
-						{
-							flame.innerHTML="<iframe  src='resources/analview/gucobresult.html' style='width : 800px; height : 500px'></iframe>";
-						}
-						else if( flamenum == 1)
-						{
-							flame.innerHTML="<iframe  src='resources/analview/gu_upcob.html' style='width : 800px; height : 500px'></iframe>";
-						}
-						else if( flamenum == 2)
-						{
-							flame.innerHTML="<iframe  src='resources/analview/gu_upcob.html' style='width : 800px; height : 500px'></iframe>";
-						}
-						else if( flamenum == 3)
-						{
-							flame.innerHTML="<iframe  src='resources/analview/gucurrupso.html' style='width : 800px; height : 500px'></iframe>";
-						}
-						else if( flamenum == 4)
-						{
-							flame.innerHTML="<iframe  src='resources/analview/guFineupso.html' style='width : 600px; height : 375px'></iframe>"
-												+ "<iframe  src='resources/analview/gususpensionupso.html' style='width : 600px; height : 375px'></iframe>"
-						}
-						else if( flamenum == 5)
-						{
-							flame.innerHTML="<iframe  src='resources/analview/DISPO_cnt_line.html' style='width : 800px; height : 500px'></iframe>";
-						}
-						spinner.setAttribute("style", "-webkit-transform: rotateY(" + angle + "deg); -moz-transform: rotateY(" + angle + "deg); transform: rotateY(" + angle + "deg);");
-					}
+					//주소-좌표 변환 객체를 생성합니다
+					var geocoder = new kakao.maps.services.Geocoder();
+					//주소로 좌표를 검색합니다
+
+					var addrinput = '서울'
+					console.log(addrinput);
+					geocoder
+						.addressSearch(
+							addrinput,
+							function (result, status) {
+								var coords = null;
+								// 정상적으로 검색이 완료됐으면 
+								if (status === kakao.maps.services.Status.OK) {
+									coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+									var mapContainer = document
+										.getElementById('map'), // 지도를 표시할 div 
+										mapOption = {
+											center: coords, // 지도의 중심좌표
+											level: 8
+											// 지도의 확대 레벨
+										};
+									//지도를 생성합니다    
+									var map = new kakao.maps.Map(mapContainer,
+										mapOption);
+									// 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+									map.setCenter(coords);
+								}
+							});
+
+					function panTo(addrinput) {
+						// 이동할 위도 경도 위치를 생성합니다 
+						geocoder
+							.addressSearch(
+								addrinput,
+								function (result, status) {
+									var coords = null;
+									// 정상적으로 검색이 완료됐으면 
+									if (status === kakao.maps.services.Status.OK) {
+										coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+										var mapContainer = document
+											.getElementById('map'), // 지도를 표시할 div 
+											mapOption = {
+												center: coords, // 지도의 중심좌표
+												level: 3
+												// 지도의 확대 레벨
+											};
+										//지도를 생성합니다    
+										var map = new kakao.maps.Map(mapContainer,
+											mapOption);
+										
+										var marker = new kakao.maps.Marker({
+											map: map,
+											position: coords
+										});
+										// 인포윈도우로 장소에 대한 설명을 표시합니다
+										var infowindow = new kakao.maps.InfoWindow(
+											{
+												content: '<div style="width:150px;text-align:center;padding:6px 0;">'+addrinput+'</div>'
+											});
+										infowindow.open(map, marker);
+										// 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+										map.panTo(coords);
+									}
+								});
+					}        
 				</script>
 			</div>
-			
-			<p align="middle" id = "iamflame">
-				<iframe src="resources/analview/gucobresult.html" style="width : 800px; height : 500px">
-				</iframe>
-			</p>
-			
-			<!--
-				<iframe src="resources/analview/gu_upcob.html" title="W3Schools Free Online Web Tutorials" style="width : 800px; height : 500px">
-				</iframe>
-				<iframe src="resources/analview/gu_upcob.html" title="W3Schools Free Online Web Tutorials" style="width : 800px; height : 500px">
-				</iframe>
-				<iframe src="resources/analview/gucurrupso.html" title="W3Schools Free Online Web Tutorials" style="width : 800px; height : 500px">
-				</iframe>
-				-->
-
-				<!-- 
-				<iframe src="resources/analview/gucurrupso.html" title="W3Schools Free Online Web Tutorials" style="width : 800px; height : 500px">
-				</iframe>
-				
-				 -->
-				 
-				 <script type="text/javascript">
-				 
-					 var alpha = 0;
-					 
-					 
-				 
-				 </script>
-
-
 		</section>
 
 		<footer class="ftco-section ftco-section-2">
@@ -503,7 +596,6 @@ figure#spinner img:nth-child(8){ transform: rotateY(-315deg); } */
 	<script src="<c:url value="/resources/js/owl.carousel.min.js" />"></script>
 	<script src="<c:url value="/resources/js/jquery.magnific-popup.min.js" />"></script>
 	<script src="<c:url value="/resources/js/aos.js" />"></script>
-
 	<script src="<c:url value="/resources/js/nouislider.min.js" />"></script>
 	<script src="<c:url value="/resources/js/moment-with-locales.min.js" />"></script>
 	<script src="<c:url value="/resources/js/bootstrap-datetimepicker.min.js" />"></script>

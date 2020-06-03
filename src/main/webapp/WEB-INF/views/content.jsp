@@ -34,6 +34,8 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/icomoon.css" type="text/css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" type="text/css">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script type="text/javascript"
+			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bc749fee6771e67cc8f77587a763513a&libraries=services"></script>
 
 	<style>
 .container111 {
@@ -694,9 +696,9 @@
 								<b class="caret"></b>
 							</a>
 							<div class="dropdown-menu dropdown-menu-left">
-								<a href="http://localhost:8000/donghang/analysis" class="dropdown-item"><i
+								<a href="donghang/analysis" class="dropdown-item"><i
 										class="ion-ios-apps mr-2"></i> 기본 분석 </a> <a
-									href="http://localhost:8000/donghang/data" class="dropdown-item"><i
+									href="donghang/data" class="dropdown-item"><i
 										class="ion-ios-document mr-2"></i>데이터 분석 </a>
 							</div>
 
@@ -815,8 +817,8 @@
 									punishlist[0]. gnt_no }</span>
 							</div>
 							<div class="expenses__box">
-								<span class="expenses__title">[법적근거]</span><span class="expenses__amount">${
-									punishlist[0]. bas_law }</span>
+								<span class="expenses__title">[법적근거]</span><span class="expenses__amount"><a href="http://law.go.kr/${ punishlist[0]. bas_law_clean }">${
+									punishlist[0]. bas_law }</a></span>
 							</div>
 							<div class="expenses__box">
 								<span class="expenses__title">[처분내용]</span><span class="expenses__amount">${
@@ -824,12 +826,13 @@
 							</div>
 							<div class="expenses__box">
 								<span class="expenses__title">[처분기간]</span><span class="expenses__amount">${
-									punishlist[0]. dispo_ctn_dt}</span>
+									punishlist[0]. dispo_gigan }</span>
 							</div>
 
 							<div class="savings">
 								<span class="expenses__title">위반내용 : </span><span
-									class="expenses__amount">${punishlist[0].viol_cn} </span>
+									class="expenses__amount">${ punishlist[0]. viol_cn } </span>
+									<!-- 위반내용을 못 받아옴!! 이유 확인 불가!! -->
 							</div>
 						</div>
 
@@ -885,8 +888,7 @@
 			</div>
 		</section>
 
-		<script type="text/javascript"
-			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bc749fee6771e67cc8f77587a763513a&libraries=services"></script>
+		
 		<script>
 			//주소-좌표 변환 객체를 생성합니다
 			var geocoder = new kakao.maps.services.Geocoder();
@@ -904,8 +906,7 @@
 						var coords = null;
 						// 정상적으로 검색이 완료됐으면 
 						if (status === kakao.maps.services.Status.OK) {
-							coords = new kakao.maps.LatLng(result[0].y,
-								result[0].x);
+							coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
 							var mapContainer = document
 								.getElementById('map'), // 지도를 표시할 div 
@@ -942,9 +943,11 @@
 					<script>
 						document.write(new Date().getFullYear());
 					</script>
-					메인 페이지 제작중입니다. 세세한것 바꾸기 어렵네유
-					<!-- <i class="icon-heart" aria-hidden="true"></i> -->
-					by <a href="https://github.com/Sohottoday" target="_blank">성 연</a>
+					 presented by 동행 (
+					<!-- <i class="icon-heart" aria-hidden="true"></i> -->					
+					 <a href="https://github.com/Alphanewbie" target="_blank">찬 우</a>, 
+					 <a href="https://github.com/Sohottoday" target="_blank">성 연</a>, 
+					  <a href="https://github.com/soykim-snail" target="_blank">소 연</a>)
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 				</p>
 			</div>

@@ -45,6 +45,17 @@ public class upsoDAO {
 
         return list;
     }
+    
+    public List<BusinessVO> upsoSearchName(String keyword) {
+
+    	List<BusinessVO> list = new ArrayList<BusinessVO>();
+        String statement = "resource.UpsoMapper.searchname";
+        // System.out.print(keyword.getUpso_nm()+"/ happy /" + keyword.getSite_addr());
+        list = session.selectOne(statement, keyword);
+
+        return list;
+    }
+
 
 
     public List<SearchVO> upsoSimular(String keyword) {

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="resource.closedperMapper">
+
+	<select id="searchrate" resultType="Vo.ClosedVO"> 
+		select rownum,pos,rate
+from(select curr.pos,closed.cnt/curr.cnt AS rate
+from (select SUBSTR(site_addr, 0, INSTR(site_addr, ' ', 1, 3)) AS pos,count(* ) AS cnt
+from biz_a
+where DCB_YMD is null
+group by SUBSTR(site_addr, 0, INSTR(site_addr, ' ', 1, 3))) curr
+inner join
+(select SUBSTR(site_addr, 0, INSTR(site_addr, ' ', 1, 3)) AS pos,count(*) AS cnt
+from biz_a
+where to_date(2017,'YYYY') <![CDATA[ < ]]> DCB_YMD and site_addr like '%서울%'
+group by SUBSTR(site_addr, 0, INSTR(site_addr, ' ', 1, 3))) closed
+on curr.pos = closed.pos
+order by closed.cnt/curr.cnt desc)
+	</select>
+
+</mapper>

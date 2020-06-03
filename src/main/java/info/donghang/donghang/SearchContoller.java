@@ -16,7 +16,6 @@ import Vo.BusinessVO;
 import Vo.DispositionVo;
 import Vo.SearchVO;
 
-
 @Controller
 public class SearchContoller {
 
@@ -24,65 +23,70 @@ public class SearchContoller {
 	upsoDAO dao = null;
 	@Autowired
 	punishmentDAO punish = null;
-	
+
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public ModelAndView home(String keyword) {
 		ModelAndView mav = new ModelAndView();
 		List<BusinessVO> list = null;
-		String[] search = keyword.split("/",2);
-		SearchVO test = null;
+		try {
+			String[] search = keyword.split("/", 2);
+
+			SearchVO test = null;
 //		System.out.println(search[0] +"/here/"+ search[1]);
 //		System.out.println(search.length);
-		if(search.length ==2) {
-			test = new SearchVO(search[0].trim(),search[1].trim());
-			list = dao.upsoSearch(test);
-		}
-		else {
+			if (search.length == 2) {
+				test = new SearchVO(search[0].trim(), search[1].trim());
+				list = dao.upsoSearch(test);
+			} else {
 //			Ű���� 1��¥�� �˻�
-			list = dao.upsoSearch(keyword);
-		}
-		
-		if(list.size()==1) {
-			mav.addObject("item", list.get(0));
-			System.out.print(list.get(0).getSite_addr_rd());
-			search = test.getSite_addr().split("  ",2);
-			test.setSite_addr(search[0]);
-			List<DispositionVo> punishlist = punish.punishSearch(test);
+				list = dao.upsoSearch(keyword);
+			}
+
+			if (list.size() == 1) {
+				mav.addObject("item", list.get(0));
+				System.out.print(list.get(0).getSite_addr_rd());
+				search = test.getSite_addr().split("  ", 2);
+				test.setSite_addr(search[0]);
+				List<DispositionVo> punishlist = punish.punishSearch(test);
 //			for (int i=0;i<punishlist.size();i++) {
 //				System.out.println("Dev : "+punishlist.get(i).getBas_law());
 //			}
-			mav.addObject("punishlist", punishlist);
+				mav.addObject("punishlist", punishlist);
 //			mav.addObject("punish", new)
-			mav.setViewName("content");
-			return mav;
-		}
-		else {
-			mav.addObject("item", list.get(0));
-			System.out.print(list.get(0).getSite_addr_rd());
-			search = test.getSite_addr().split("  ",2);
-			test.setSite_addr(search[0]);
-			List<DispositionVo> punishlist = punish.punishSearch(test);
+				mav.setViewName("content");
+				return mav;
+			} else {
+				mav.addObject("item", list.get(0));
+				System.out.print(list.get(0).getSite_addr_rd());
+				search = test.getSite_addr().split("  ", 2);
+				test.setSite_addr(search[0]);
+				List<DispositionVo> punishlist = punish.punishSearch(test);
 //			for (int i=0;i<punishlist.size();i++) {
 //				System.out.println("Dev : "+punishlist.get(i).getBas_law());
 //			}
-			mav.addObject("punishlist", punishlist);
+				mav.addObject("punishlist", punishlist);
 //			mav.addObject("punish", new)
-			mav.setViewName("content");
+				mav.setViewName("content");
+				return mav;
+			}
+		} catch (Exception e) {
+			
+			mav.addObject("keyword", keyword);
+			mav.setViewName("home");
 			return mav;
 		}
 	}
-	
+
 	@RequestMapping(value = "/simularsearch", method = RequestMethod.GET)
 	public @ResponseBody List<String> simularsearch(String keyword) {
 		List<SearchVO> list = dao.upsoSimular(keyword);
-		List<String> result = new ArrayList<String>(); 
-		for(int i=0;i<list.size();i++) {
+		List<String> result = new ArrayList<String>();
+		for (int i = 0; i < list.size(); i++) {
 			SearchVO item = list.get(i);
-			result.add(item.getUpso_nm()+" / "+item.getSite_addr());
+			result.add(item.getUpso_nm() + " / " + item.getSite_addr());
 //			System.out.println(item.getUpso_nm()+" / "+item.getSite_addr());
 		}
 		return result;
 	}
-	
-	
+
 }

@@ -173,7 +173,7 @@ input:-webkit-autofill {
 					<div class="centered">
 						<div class="group">
 							<form action="search" method="GET">
-								<input id="name" name="keyword" type="text" required="required" /> <label
+								<input id="name" name="keyword" type="text" required="required" value='${keyword}'/> <label
 									for="name">업소명을 입력해주세요.</label>
 								<div class="bar"></div>
 							</form>

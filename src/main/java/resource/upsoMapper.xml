@@ -115,6 +115,35 @@
 		)
 		where rownum BETWEEN 1 AND 10
 	</select>
+	
+	<select id="searchname" resultType="Vo.SearchVO"
+		parameterType="String">
+		select
+		distinct perm_nt_no,
+		cgg_code,
+		snt_cob_code,
+		yy,
+		upso_sno,
+		snt_cob_nm,
+		TO_CHAR(perm_nt_ymd,'YYYYMMDD'),
+		upso_nm,
+		site_addr_rd,
+		site_addr,
+		upso_site_telno,
+		bup_nm,
+		TO_CHAR(site_stdt,'YYYYMMDD'),
+		admdng_nm,
+		TO_CHAR(dcb_ymd,'YYYYMMDD'),
+		dcb_gbn_nm,
+		dcb_why,
+		snt_uptae_nm,
+		ge_eh_yn,
+		site_loc_gbn,
+		trdp_area_etc
+		from biz_a
+		where upso_nm like '%'||#{keyword}||'%' and rownum=1 and SNT_COB_NM like '%일반음식점%'
+
+	</select>
 
 
 </mapper>
