@@ -48,6 +48,13 @@ public class HomeController {
 				
 		return "data2";
 	}
+
+	@RequestMapping(value = "/restAPI", method = RequestMethod.GET)
+	public String restAPI(Locale locale, Model model) {
+				
+				
+		return "RestAPI";
+	}
 	@RequestMapping(value = "/content2", method = RequestMethod.GET)
 	public String content2(Locale locale, Model model) {
 				

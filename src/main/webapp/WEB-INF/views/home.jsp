@@ -156,7 +156,7 @@ input:-webkit-autofill {
 									데이터 분석 </a>
 							</div>
 						</li>
-						<li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i
+						<li class="nav-item"><a href="/donghang/restAPI" class="nav-link icon d-flex align-items-center"><i
 									class="ion-ios-cloud-download mr-2"></i> Rest API</a></li>
 						<!--  <li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i class="ion-logo-facebook"></i></a></li>
 	          <li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i class="ion-logo-twitter"></i></a></li>
