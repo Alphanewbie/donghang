@@ -24,8 +24,8 @@
 		dispo_ctn_dt,
 		dispo_gigan,
 		insp_gbn_code,
-		take_ymd <!--,
-		bas_law_clean-->
+		take_ymd,
+		bas_law_clean
 		from biz_d 
 		where upso_nm like '%'||#{upso_nm}||'%' and site_addr like '%'||#{site_addr}||'%'
 		ORDER BY ADM_DISPO_YMD desc

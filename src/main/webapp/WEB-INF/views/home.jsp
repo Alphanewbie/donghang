@@ -136,7 +136,7 @@ input:-webkit-autofill {
 
 		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 			<div class="container">
-				<a class="navbar-brand" href="http://localhost:8000/donghang">DongHang</a>
+				<a class="navbar-brand" href="/donghang">DongHang</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
 					aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="oi oi-menu"></span> Menu
@@ -149,9 +149,9 @@ input:-webkit-autofill {
 								<b class="caret"></b>
 							</a>
 							<div class="dropdown-menu dropdown-menu-left">
-								<a href="http://localhost:8000/donghang/analysis" class="dropdown-item"><i
+								<a href="/donghang/analysis" class="dropdown-item"><i
 										class="ion-ios-apps mr-2"></i> 기본 분석 </a> <a
-									href="http://localhost:8000/donghang/data" class="dropdown-item"><i
+									href="/donghang/data" class="dropdown-item"><i
 										class="ion-ios-document mr-2"></i>
 									데이터 분석 </a>
 							</div>
@@ -186,12 +186,17 @@ input:-webkit-autofill {
 		<footer class="ftco-section ftco-section-2">
 			<div class="col-md-12 text-center">
 				<p class="mb-0">
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					Copyright &copy;
 					<script>
 						document.write(new Date().getFullYear());
 					</script>
-					메인 페이지 제작중입니다. 세세한것 바꾸기 어렵네유
-					by <a href="https://github.com/Sohottoday" target="_blank">성 연</a>
+					 presented by 동행 (
+					<!-- <i class="icon-heart" aria-hidden="true"></i> -->					
+					 <a href="https://github.com/Alphanewbie" target="_blank">찬 우</a>, 
+					 <a href="https://github.com/Sohottoday" target="_blank">성 연</a>, 
+					  <a href="https://github.com/soykim-snail" target="_blank">소 연</a>)
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 				</p>
 			</div>
 		</footer>

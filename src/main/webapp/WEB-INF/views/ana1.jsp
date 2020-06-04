@@ -95,7 +95,7 @@
 
 		.panel {
 			/* max-width:960px */
-			;
+
 			text-align: center;
 			position: relative;
 			margin: auto;
@@ -125,7 +125,7 @@
 
 		.pink .panel {
 			/* max-width:960px */
-			;
+
 			text-align: center;
 			position: relative;
 			margin: auto;
@@ -213,7 +213,7 @@
 
 		.blue .panel {
 			/* max-width:960px */
-			;
+
 			text-align: center;
 			position: relative;
 			margin: auto;
@@ -297,6 +297,69 @@ figure#spinner img:nth-child(8){ transform: rotateY(-315deg); } */
 			color: #888;
 			cursor: pointer;
 		}
+
+		.search {
+			width: 100%;
+			position: relative;
+			display: flex;
+			margin-top: 25px;
+		}
+
+		#searchform {
+			width: 100%;
+			position: relative;
+			display: flex;
+		}
+
+		.searchTerm {
+			width: 100%;
+			border: 3px solid #00B4CC;
+			border-right: none;
+			padding: 5px;
+			height: 50px;
+			border-radius: 5px 0 0 5px;
+			outline: none;
+			color: #9DBFAF;
+		}
+
+		.searchTerm:focus {
+			color: #00B4CC;
+		}
+
+		.searchButton {
+			width: 50px;
+			/* 40 */
+			height: 50px;
+			/* 36 */
+			border: 1px solid #00B4CC;
+			background: #00B4CC;
+			text-align: center;
+			color: #fff;
+			border-radius: 0 5px 5px 0;
+			cursor: pointer;
+			font-size: 15px;
+		}
+
+		.wrap {
+			width: 30%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		#wordcloud {
+			width: 100%;
+			height: 85%
+		}
+
+		.wrap {
+			width: 30%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
 	</style>
 
 </head>
@@ -311,6 +374,20 @@ figure#spinner img:nth-child(8){ transform: rotateY(-315deg); } */
 					<span class="oi oi-menu"></span> Menu
 				</button>
 				<div class="collapse navbar-collapse" id="ftco-nav">
+					<!-- 12시 방향 검색 창 -->
+					<div class="wrap">
+						<div class="search">
+
+							<form action="search" method="GET" id="searchform">
+								<input type="text" id="name" name="keyword" class="searchTerm"
+									placeholder="업소명을 입력해주세요.">
+								<button type="submit" class="searchButton">
+									<!-- <i class="fa fa-search"></i> -->검색
+								</button>
+							</form>
+						</div>
+					</div>
+
 					<ul class="navbar-nav ml-auto">
 						<li class="dropdown nav-item"><a href="#"
 								class="dropdown-toggle nav-link icon d-flex align-items-center" data-toggle="dropdown">
@@ -318,18 +395,18 @@ figure#spinner img:nth-child(8){ transform: rotateY(-315deg); } */
 								<b class="caret"></b>
 							</a>
 							<div class="dropdown-menu dropdown-menu-left">
-								<a href="/donghang/analysis" class="dropdown-item"><i
-										class="ion-ios-apps mr-2"></i> 기본 분석 </a> <a
-									href="/donghang/data" class="dropdown-item"><i
-										class="ion-ios-document mr-2"></i>
-									데이터 분석 </a>
+								<a href="/donghang/analysis" class="dropdown-item"><i class="ion-ios-apps mr-2"></i> 기본
+									분석 </a> <a href="/donghang/data" class="dropdown-item"><i
+										class="ion-ios-document mr-2"></i>데이터 분석 </a>
 							</div>
+
 						</li>
-						<li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i
+						<li class="nav-item"><a href="/donghang/restAPI"
+								class="nav-link icon d-flex align-items-center"><i
 									class="ion-ios-cloud-download mr-2"></i> Rest API</a></li>
 						<!--  <li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i class="ion-logo-facebook"></i></a></li>
-	          <li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i class="ion-logo-twitter"></i></a></li>
-	          <li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i class="ion-logo-instagram"></i></a></li> -->
+             <li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i class="ion-logo-twitter"></i></a></li>
+             <li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i class="ion-logo-instagram"></i></a></li> -->
 					</ul>
 				</div>
 			</div>
@@ -342,113 +419,96 @@ figure#spinner img:nth-child(8){ transform: rotateY(-315deg); } */
 			<div class="coverbutton">
 				<div class="panel">
 					<button class="gucategory">전 체</button>
-					<button class="gucategory" onClick="location.href='/donghang/closerate'">강남구</button>
-					<!-- 
-					<button class="gucategory">강동구</button>
-					<button class="gucategory">강북구</button>
-					<button class="gucategory">강서구</button>
-
-					<button class="gucategory">관악구</button>
-					<button class="gucategory">광진구</button>
-					<button class="gucategory">구로구</button>
-					<button class="gucategory">금천구</button>
-					<button class="gucategory">노원구</button>
-				</div>
-				<div class="panel bw">
-					<button class="gucategory">도봉구</button>
-					<button class="gucategory">동대문구</button>
-					<button class="gucategory">동작구</button>
-					<button class="gucategory">마포구</button>
-					<button class="gucategory">서대문구</button>
-					<button class="gucategory">서초구</button>
-					<button class="gucategory">성동구</button>
-					<button class="gucategory">성북구</button>
-					<button class="gucategory">송파구</button>
-					<button class="gucategory">양천구</button>
-				</div>
-				<div class="panel blue">
-					<button class="gucategory">영등포구</button>
-					<button class="gucategory">용산구</button>
-					<button class="gucategory">은평구</button>
-					<button class="gucategory">종로구</button>
-					<button class="gucategory">중구</button>
-					<button class="gucategory">중랑구</button> 
-					-->
+					<button class="gucategory" onClick="location.href='/donghang/closerate'">폐업률 랭킹</button>
 				</div>
 			</div>
-
+			
+			<br>
+			<br>
+			<h2 id = "imgtitle" style = "color: wheat; text-align: center;"> 구별 업소 비율. </h2>
 			<!-- graph section -->
 			<div id="carousel">
 
 				<figure id="spinner">
-					<img src="resources/images/gu_upso.png" >
-					<img src="resources/images/gu_upcob.png">
-					<img src="resources/images/gu_upsopunish.png">
-					<img src="resources/images/temper.png">
-					<img src="resources/images/gukeptvia.png">
-					<img src="resources/images/DISPO_CTN.png">
+					<img src="resources/images/gu_upso.png" style="width: 425; height: 425;">
+					<img src="resources/images/gu_upcob.png" style="width: 425; height: 425;">
+					<img src="resources/images/gu_upsopunish.png" style="width: 425; height: 425;">
+					<img src="resources/images/temper.png" style="width: 425; height: 425;">
+					<img src="resources/images/gukeptvia.png" style="width: 425; height: 425;">
+					<img src="resources/images/DISPO_CTN.png" style="width: 425; height: 425;">
 				</figure>
 
-				<span style="float:left; font-size: 60px;" class="ss-icon" onclick="galleryspin('-')" >&lt;</span>
+				<span style="float:left; font-size: 60px;" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
 				<span style="float:right; font-size: 60px;" class="ss-icon" onclick="galleryspin('')">&gt;</span>
 				<script>
-					var flamenum=0;
+					var flamenum = 0;
 					var angle = 0;
 					function galleryspin(sign) {
 						spinner = document.querySelector("#spinner");
 						flame = document.getElementById('iamflame');
-						if (!sign) { 
+						imgtitle = document.getElementById('imgtitle');
+						htmltitle = document.getElementById('htmltitle');
+						if (!sign) {
 							angle = angle + 60;
 							console.log(flamenum);
 							flamenum = (flamenum + 1) % 6;
 							console.log(flamenum);
-						} else { 
-							angle = angle - 60; 
+						} else {
+							angle = angle - 60;
 							console.log(flamenum);
 							flamenum = flamenum - 1;
-							
-							if(flamenum<0)
-							{
+
+							if (flamenum < 0) {
 								flamenum = 5;
 							}
 							console.log(flamenum);
 						}		/* +45 -45 */
 						console.log(flamenum);
-						if( flamenum == 0)
-						{
-							flame.innerHTML="<iframe  src='resources/analview/gucobresult.html' style='width : 800px; height : 500px'></iframe>";
+						if (flamenum == 0) {
+							flame.innerHTML = "<iframe  src='resources/analview/gucobresult.html' style='width : 800px; height : 500px'></iframe>";
+							imgtitle.innerHTML = '<h2 id = "imgtitle" style = "color: wheat; text-align: center;"> 구별 업소 갯수. </h2>';
+							htmltitle.innerHTML = '<h2 id = "imgtitle" style = "color: wheat; text-align: center;"> 구별 업종 비율 </h2>';
 						}
-						else if( flamenum == 1)
-						{
-							flame.innerHTML="<iframe  src='resources/analview/gu_upcob.html' style='width : 800px; height : 500px'></iframe>";
+						else if (flamenum == 1) {
+							flame.innerHTML = "<iframe  src='resources/analview/gu_upcob.html' style='width : 800px; height : 500px'></iframe>";
+							imgtitle.innerHTML = '<h2 id = "imgtitle" style = "color: wheat; text-align: center;"> 구별 일반 음식점 갯수. </h2>';
+							htmltitle.innerHTML = '<h2 id = "imgtitle" style = "color: wheat; text-align: center;"> 구별 일반 음식점 비율 </h2>';
 						}
-						else if( flamenum == 2)
-						{
-							flame.innerHTML="<iframe  src='resources/analview/gu_upcob.html' style='width : 800px; height : 500px'></iframe>";
+						else if (flamenum == 2) {
+							flame.innerHTML = "<iframe  src='resources/analview/gu_upcob.html' style='width : 800px; height : 500px'></iframe>";
+							imgtitle.innerHTML = '<h2 id = "imgtitle" style = "color: wheat; text-align: center;"> 구별 일반 음식점 행청처분 갯수. </h2>';
+							htmltitle.innerHTML = '<h2 id = "imgtitle" style = "color: wheat; text-align: center;"> 구별 일반 음식점 행청처분 갯수. </h2>';
 						}
-						else if( flamenum == 3)
-						{
-							flame.innerHTML="<iframe  src='resources/analview/gucurrupso.html' style='width : 800px; height : 500px'></iframe>";
+						else if (flamenum == 3) {
+							flame.innerHTML = "<iframe  src='resources/analview/gucurrupso.html' style='width : 800px; height : 500px'></iframe>";
+							imgtitle.innerHTML = '<h2 id = "imgtitle" style = "color: wheat; text-align: center;"> 최근 10년 동안 영업 중인 가게 수와 창업률 </h2>';
+							htmltitle.innerHTML = '<h2 id = "imgtitle" style = "color: wheat; text-align: center;"> 최근 10년 간의 일반 음식점 창업수와, 폐업수, 창업률 대비 폐업률 </h2>';
 						}
-						else if( flamenum == 4)
-						{
-							flame.innerHTML="<iframe  src='resources/analview/guFineupso.html' style='width : 600px; height : 375px'></iframe>"
-												+ "<iframe  src='resources/analview/gususpensionupso.html' style='width : 600px; height : 375px'></iframe>"
+						else if (flamenum == 4) {
+							flame.innerHTML = "<iframe  src='resources/analview/guFineupso.html' style='width : 600px; height : 375px'></iframe>"
+								+ "<iframe  src='resources/analview/gususpensionupso.html' style='width : 600px; height : 375px'></iframe>";
+								imgtitle.innerHTML = '<h2 id = "imgtitle" style = "color: wheat; text-align: center;"> 행정 처분 횟수당 유지률. </h2>';
+								htmltitle.innerHTML = '<h2 id = "imgtitle" style = "color: wheat; text-align: center;"> 과징금과 영업 정치를 행정 처분 횟수당 유지률. </h2>';
 						}
-						else if( flamenum == 5)
-						{
-							flame.innerHTML="<iframe  src='resources/analview/DISPO_cnt_line.html' style='width : 800px; height : 500px'></iframe>";
+						else if (flamenum == 5) {
+							flame.innerHTML = "<iframe  src='resources/analview/DISPO_cnt_line.html' style='width : 800px; height : 500px'></iframe>";
+							imgtitle.innerHTML = '<h2 id = "imgtitle" style = "color: wheat; text-align: center;"> 서울시 조치된 행정 처분의 갯수. </h2>';
+							htmltitle.innerHTML = '<h2 id = "imgtitle" style = "color: wheat; text-align: center;"> 처분 횟수 별 업소 갯수 </h2>';
 						}
 						spinner.setAttribute("style", "-webkit-transform: rotateY(" + angle + "deg); -moz-transform: rotateY(" + angle + "deg); transform: rotateY(" + angle + "deg);");
 					}
 				</script>
 			</div>
 			
-			<p align="middle" id = "iamflame">
+			</br>
+			<h2 id = "htmltitle" style = "color: wheat; text-align: center;"> 구별 업종 비율. </h2>
+			</br>
+
+			<p align="middle" id="iamflame">
 				<iframe src="resources/analview/gucobresult.html" style="width : 800px; height : 500px">
 				</iframe>
 			</p>
-			
+
 			<!--
 				<iframe src="resources/analview/gu_upcob.html" title="W3Schools Free Online Web Tutorials" style="width : 800px; height : 500px">
 				</iframe>
@@ -458,19 +518,15 @@ figure#spinner img:nth-child(8){ transform: rotateY(-315deg); } */
 				</iframe>
 				-->
 
-				<!-- 
+			<!-- 
 				<iframe src="resources/analview/gucurrupso.html" title="W3Schools Free Online Web Tutorials" style="width : 800px; height : 500px">
 				</iframe>
 				
 				 -->
-				 
-				 <script type="text/javascript">
-				 
-					 var alpha = 0;
-					 
-					 
-				 
-				 </script>
+
+			<script type="text/javascript">
+				var alpha = 0;
+			</script>
 
 
 		</section>
@@ -483,9 +539,11 @@ figure#spinner img:nth-child(8){ transform: rotateY(-315deg); } */
 					<script>
 						document.write(new Date().getFullYear());
 					</script>
-					메인 페이지 제작중입니다. 세세한것 바꾸기 어렵네유
+					presented by 동행 (
 					<!-- <i class="icon-heart" aria-hidden="true"></i> -->
-					by <a href="https://github.com/Sohottoday" target="_blank">성 연</a>
+					<a href="https://github.com/Alphanewbie" target="_blank">찬 우</a>,
+					<a href="https://github.com/Sohottoday" target="_blank">성 연</a>,
+					<a href="https://github.com/soykim-snail" target="_blank">소 연</a>)
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 				</p>
 			</div>
