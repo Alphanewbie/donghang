@@ -30,7 +30,20 @@
 		<beans:property name="username" value="jdbctest" />
 		<beans:property name="password" value="jdbctest" />
 	</beans:bean>
+<!--
+	<beans:bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<beans:property name="driverClassName"
+			value="com.mysql.cj.jdbc.Driver" />
+		<beans:property name="url"
+			value="jdbc:mysql://happyness.mysql.database.azure.com/donghang" />		
 
+		<beans:property name="username" value="계정암호" />							
+
+		<beans:property name="password" value="계정비밀번호" />						
+
+	</beans:bean>
+-->
 	<beans:bean id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
 		<beans:property name="dataSource" ref="dataSource" />
