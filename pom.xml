@@ -144,6 +144,12 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>5.0.2.RELEASE</version>
 		</dependency>
+		
+		<dependency>
+            		<groupId>mysql</groupId>
+            		<artifactId>mysql-connector-java</artifactId>
+            		<version>6.0.5</version>
+        	</dependency>
 
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -265,5 +271,19 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<resources>
+            		<resource>
+                		<directory>src/main/resource</directory>
+                		<includes>
+                    			<include>**/*.xml</include>
+                		</includes>
+            		</resource>
+            	<resource>
+                	<directory>src/main/java</directory>
+                		<includes>
+                    			<include>**/*.properties</include>
+                		</includes>
+            		</resource>
+        	</resources>
 	</build>
 </project> 
